@@ -1,0 +1,12 @@
+# please don't edit this file
+# instead create a .gitignore file
+# at the root of the repository (The same folder that has "syllabus.md")
+# Each .gitignore file applies to that directory (folder) and subdirectories
+
+# we always want to keep node_modules out of our repo
+# the files are specific to your computer, no point in sharing them
+# it is created when we run `npm install`
+node_modules
+ 
+# Omitting this because 6150 students aren't writing for node
+package-lock.json
