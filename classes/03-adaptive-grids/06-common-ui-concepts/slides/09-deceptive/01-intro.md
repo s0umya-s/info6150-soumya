@@ -1,0 +1,11 @@
+# Deceptive Patterns - UI skills used AGAINST user
+- **"Privacy Zuckering"**
+  - Share more than intended
+- **Bait-and-switch**
+  - Tempting offer no longer available
+- **Confirmshaming**
+  - Drive users to act against their interests
+- **Misdirection**
+  - Hide/confuse/disguise flow
+- **Roach Motel**
+  - Hard to exit/cancel/discontinue

@@ -1,0 +1,42 @@
+* { 
+  box-sizing: border-box;
+}
+
+body { 
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.25rem;
+
+  margin: 0;
+  height: 100vh;
+
+  font-family: sans-serif;
+  background-color: lightblue;
+}
+
+.col { 
+  background-color: lightgrey;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  padding: 0.25rem;
+}
+
+.col2 { 
+  grid-column: span 2;
+}
+
+.col3 { 
+  grid-column: span 3;
+}
+
+.col4 { 
+  grid-column: span 4;
+}
+
+.col6 {
+  grid-column: span 6;
+}
+
+.col12 { 
+  grid-column: span 12;
+}

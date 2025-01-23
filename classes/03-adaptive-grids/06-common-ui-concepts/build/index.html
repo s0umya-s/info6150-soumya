@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Prez</title>
+
+    <meta name="description" content="-- DESCRIPTION HERE --">
+    <meta name="author" content="swiftone">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/highlight/styles/zenburn.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides"><section id="chapter-intro" class="chapter">
+<section id="intro-overview" class="slide" data-has-notes="false">
+<h1>Common UI concepts</h1><ul>
+<li>Can&#39;t give everything yet<ul>
+<li>We only have a little HTML/CSS so far</li>
+</ul>
+</li>
+<li>This is a start</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-affordance" class="chapter">
+<section id="affordance-intro" class="slide" data-has-notes="false">
+<h1>Affordance</h1><p>A hint that an interaction is possible</p>
+<ul>
+<li>Can be explicit <ul>
+<li>ex: a label</li>
+</ul>
+</li>
+<li>Can be implicit <ul>
+<li>ex: a suggestive shape</li>
+</ul>
+</li>
+<li>May only be triggered by a lead in action<ul>
+<li>ex: hover</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="affordance-designers" class="slide" data-has-notes="false">
+<h1>Designers and Affordance</h1><p>Designers LOVE to say something &quot;affords&quot; something</p>
+<ul>
+<li>Easy to lose track of what is being said<ul>
+<li>Jargon is not inherently good or bad</li>
+<li>Designers definitely use <em>words</em></li>
+<li>I sometimes fail to connect them into ideas</li>
+</ul>
+</li>
+<li>Affordance is an important concept<ul>
+<li>How do users know how to use your UI?</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-placeholder" class="chapter">
+<section id="placeholder-intro" class="slide" data-has-notes="false">
+<h1>Placeholder images</h1><ul>
+<li>Lorem Ipsum is placeholder text</li>
+<li>Designs often have placeholder images</li>
+<li>Not intended for users</li>
+<li>Great during development<ul>
+<li>Can place and size without waiting</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="placeholder-services" class="slide" data-has-notes="false">
+<h1>Placeholder Services</h1><ul>
+<li>Designers may provide placeholders</li>
+<li>Often, Devs have their own saved images</li>
+<li>Can use a placeholder service<ul>
+<li><a href="https://placehold.co">https://placehold.co</a> <img src="https://placehold.co/100x100"></li>
+<li><a href="https://placecats.com">https://placecats.com</a> <img src="https://placecats.com/100/100"></li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="placeholder-options" class="slide" data-has-notes="false">
+<h1>Options</h1><ul>
+<li>Services can set the size of the desired image<ul>
+<li><a href="https://placehold.co/100">https://placehold.co/100</a><ul>
+<li><a href="https://placehold.co/100x50">https://placehold.co/100x50</a></li>
+</ul>
+</li>
+<li><a href="https://placecats.com/100">https://placecats.com/100</a><ul>
+<li><a href="https://placecats.com/100/50">https://placecats.com/100/50</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Other options may exist per service<ul>
+<li>Colors</li>
+<li>Text</li>
+<li>Distinctions between repeat sizes</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-call-to-action" class="chapter">
+<section id="call-to-action-intro" class="slide" data-has-notes="false">
+<h1>Call to Action</h1><ul>
+<li>Trying to get the user to take an action<ul>
+<li>May be page concept or screen concept</li>
+<li>Usually a button, link, perhaps a small form<ul>
+<li>With &quot;punchy&quot; text/colors</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Ex: <strong>&quot;Find out more&quot;</strong>, <strong>&quot;Compare Prices&quot;</strong>, <strong>&quot;Register for free trial&quot;</strong>, <strong>Download Now</strong></p>
+<ul>
+<li>Often &quot;CTA&quot; in designer text</li>
+<li>Don&#39;t want conflict between CTAs!<ul>
+<li>Ideally only one/screen </li>
+<li>Max one/section</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="call-to-action-examples" class="slide" data-has-notes="false">
+<h1>CTA Examples</h1><ul>
+<li>&quot;Sign Up&quot; on <a href="https://www.ratemyprofessors.com/">https://www.ratemyprofessors.com/</a></li>
+<li>NOT buttons on <a href="https://www.catster.com/">https://www.catster.com/</a><ul>
+<li>All same, no CTA</li>
+</ul>
+</li>
+<li><a href="https://www.elgato.com/">https://www.elgato.com/</a></li>
+<li><a href="https://www.masterlock.com/">https://www.masterlock.com/</a><ul>
+<li>Notice potential conflict</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-fold" class="chapter">
+<section id="fold-overview" class="slide" data-has-notes="false">
+<h1>&quot;The Fold&quot;</h1><ul>
+<li>The &quot;Fold&quot; is the natural divide of web page:<ul>
+<li>What you can see without scrolling<ul>
+<li>&quot;Above the fold&quot;</li>
+</ul>
+</li>
+<li>What you have to scroll to see <ul>
+<li>&quot;Below the fold&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Originally a newspaper term<ul>
+<li>Still relevant</li>
+</ul>
+</li>
+<li>Not 100% consistent<ul>
+<li>resolutions, widescreen, mobile</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="fold-predicting" class="slide" data-has-notes="false">
+<h1>Predicting the Fold</h1><ul>
+<li>Rough desktop guideline: <ul>
+<li>1000px wide, 600px high</li>
+<li>That&#39;s <em>rough</em></li>
+</ul>
+</li>
+<li>No idea about mobile yet<ul>
+<li>So many options</li>
+<li>But I see it done poorly often</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="fold-why-care" class="slide" data-has-notes="false">
+<h1>Why do we care about the Fold?</h1><ul>
+<li>People may not want to scroll<ul>
+<li>If above the fold is boring, why bother?</li>
+</ul>
+</li>
+<li>People may not know to scroll (desktop)<ul>
+<li>Don&#39;t hide scrollability </li>
+<li>Scroll Affordance?</li>
+</ul>
+</li>
+<li>Wasting time (particularly mobile)<ul>
+<li>Why give me content if I just have to scroll?</li>
+<li>Poor UX bleeds into user opinions</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="fold-using-the-fold" class="slide" data-has-notes="false">
+<h1>Using the Fold</h1><ul>
+<li>Should have convincing material</li>
+<li>Should have a clear call to action</li>
+<li>Should make it clear when scrolling is possible</li>
+<li>Common to divide scrollable area into sections<ul>
+<li>Each with some call to action</li>
+<li>Sections in order of priority</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-hero-image" class="chapter">
+<section id="hero-image-intro" class="slide" data-has-notes="false">
+<h1>Hero Image</h1><ul>
+<li>The initial primary image for user focus<ul>
+<li>Often large to ensure it gets noticed</li>
+<li>Sets the tone of the site<ul>
+<li>First impressions happen FAST</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="hero-image-considerations" class="slide" data-has-notes="false">
+<h1>Hero Image considerations</h1><ul>
+<li>Common, but not required</li>
+<li>Too big = slow</li>
+<li>Too small = low value</li>
+<li>Tone mismatch = low value</li>
+<li>Too harsh = discourage visitors</li>
+<li>Responsive size</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-panel" class="chapter">
+<section id="panel-intro" class="slide" data-has-notes="false">
+<h1>Panel</h1><p>&quot;Panel&quot; - generic term for a box area with contents</p>
+<ul>
+<li>Often but not exclusively an image + text</li>
+<li>Often but not always horizontal alignment</li>
+<li>Creates blocks of tileable interface<ul>
+<li>Visual separation by <strong>Contrast</strong>/<strong>Whitespace</strong></li>
+<li>Important to maintain <strong>Balance</strong></li>
+<li>Easy to manage responsive/adaptive</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-cards" class="chapter">
+<section id="cards-intro" class="slide" data-has-notes="false">
+<h1>Cards</h1><ul>
+<li>UI of content presented on a distinct panel</li>
+<li>Allows funneling of users to content</li>
+<li>Contents usually vertically aligned</li>
+</ul>
+</section>
+
+<section id="cards-topic" class="slide" data-has-notes="false">
+<h1>Cards are single topic</h1><ul>
+<li>Contains content/actions regarding a single topic</li>
+<li>Easily &quot;scannable&quot;</li>
+</ul>
+</section>
+
+<section id="cards-parts" class="slide" data-has-notes="false">
+<h1>Parts of card</h1><p>Each part is optional</p>
+<ul>
+<li>Media (img, video, audio)<ul>
+<li>Don&#39;t autoplay</li>
+<li>Aim for relevance</li>
+</ul>
+</li>
+<li>Heading<ul>
+<li>Make sure to match heading structure</li>
+</ul>
+</li>
+<li>Text<ul>
+<li>Keep it short and scannable</li>
+</ul>
+</li>
+<li>Actions<ul>
+<li>Fewer is better</li>
+<li>Make action clear</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-deceptive" class="chapter">
+<section id="deceptive-intro" class="slide" data-has-notes="false">
+<h1>Deceptive Patterns - UI skills used AGAINST user</h1><ul>
+<li><strong>&quot;Privacy Zuckering&quot;</strong><ul>
+<li>Share more than intended</li>
+</ul>
+</li>
+<li><strong>Bait-and-switch</strong><ul>
+<li>Tempting offer no longer available</li>
+</ul>
+</li>
+<li><strong>Confirmshaming</strong><ul>
+<li>Drive users to act against their interests</li>
+</ul>
+</li>
+<li><strong>Misdirection</strong><ul>
+<li>Hide/confuse/disguise flow</li>
+</ul>
+</li>
+<li><strong>Roach Motel</strong><ul>
+<li>Hard to exit/cancel/discontinue</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="deceptive-sources" class="slide" data-has-notes="false">
+<h1>More about Deceptive Patterns</h1><ul>
+<li>Many variations<ul>
+<li><a href="https://www.deceptive.design/types">https://www.deceptive.design/types</a></li>
+</ul>
+</li>
+<li>Some are illegal in places!<ul>
+<li>Ex: California, Colorado, Virginia</li>
+<li><a href="https://cyberlaw.stanford.edu/blog/2020/10/dark-patterns-and-ccpa">https://cyberlaw.stanford.edu/blog/2020/10/dark-patterns-and-ccpa</a></li>
+<li><a href="https://www.bytebacklaw.com/2022/03/how-do-the-cpra-cpa-and-vcdpa-treat-dark-patterns/">https://www.bytebacklaw.com/2022/03/how-do-the-cpra-cpa-and-vcdpa-treat-dark-patterns/</a></li>
+</ul>
+</li>
+<li><a href="https://www.oecd-ilibrary.org/science-and-technology/dark-commercial-patterns_44f5e846-en">https://www.oecd-ilibrary.org/science-and-technology/dark-commercial-patterns_44f5e846-en</a></li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-summary" class="chapter">
+<section id="summary-call-to-action" class="slide" data-has-notes="false">
+<h1>Summary - Call to Action</h1><ul>
+<li>Usually a button/link <ul>
+<li>Stands out visual</li>
+<li>Text asks for action</li>
+</ul>
+</li>
+<li>Wanted above the fold</li>
+<li>Want one CTA per screen</li>
+</ul>
+</section>
+
+<section id="summary-the-fold" class="slide" data-has-notes="false">
+<h1>Summary - The Fold</h1><ul>
+<li>Initial visible page</li>
+<li>Should be enough to keep user</li>
+<li>Often has Hero Image</li>
+<li>Should have CTA</li>
+</ul>
+</section>
+
+<section id="summary-hero-image" class="slide" data-has-notes="false">
+<h1>Summary - Hero Image</h1><ul>
+<li>Big initial first impression</li>
+<li>Sets tone of page</li>
+</ul>
+</section>
+
+<section id="summary-panels" class="slide" data-has-notes="false">
+<h1>Summary - Panels</h1><ul>
+<li>Distinct Rectangle/Oval tile</li>
+<li>Easy to use responsive/adaptive</li>
+<li>Basic Building Block of site</li>
+<li>Often horizontal content</li>
+</ul>
+</section>
+
+<section id="summary-cards" class="slide" data-has-notes="false">
+<h1>Summary - Cards</h1><ul>
+<li>Specialized Panel</li>
+<li>Single-topic per card</li>
+<li>Easily scannable</li>
+<li>Funnels to actions</li>
+<li>Often vertical content</li>
+</ul>
+</section>
+
+<section id="summary-deceptive" class="slide" data-has-notes="false">
+<h1>Summary - Deceptive Patterns</h1><p>&quot;Putting shareholder benefit ahead of user benefit&quot;</p>
+<ul>
+<li>Using UI to trick or annoy user</li>
+</ul>
+</section>
+</section></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+    </script>
+
+    <script src="js/dynamic-theme.js"></script><script src="js/custom.js"></script>
+
+  </body>
+</html>

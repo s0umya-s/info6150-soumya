@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Prez</title>
+
+    <meta name="description" content="-- DESCRIPTION HERE --">
+    <meta name="author" content="swiftone">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/highlight/styles/zenburn.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides"><section id="chapter-revisiting-grid" class="chapter">
+<section id="revisiting-grid-grid" class="slide" data-has-notes="false">
+<h1>CSS Grid</h1><ul>
+<li>Allows layout for child elements</li>
+<li>In vertical and horizontal grid</li>
+<li>Blocks can &quot;span&quot; multiple &quot;cells&quot;</li>
+<li>We used &quot;areas&quot;<ul>
+<li>With different column sizes</li>
+<li>Not the only option</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="revisiting-grid-more-options" class="slide" data-has-notes="false">
+<h1>CSS Grid Properties</h1><p>We will be using some additional CSS properties</p>
+<p>Parent element: (with <code>display: grid;</code>)</p>
+<ul>
+<li><code>grid-template-columns: repeat(12, 1fr);</code><ul>
+<li>Creates even distribution of space in columns</li>
+<li><code>12</code> can be any number</li>
+</ul>
+</li>
+<li><code>gap</code> - puts space between columns/rows</li>
+</ul>
+</section>
+
+<section id="revisiting-grid-child-options" class="slide" data-has-notes="false">
+<h1>CSS Properties Child Element</h1><ul>
+<li><code>grid-column: span 1;</code> <ul>
+<li>The <code>1</code> can be any number</li>
+<li>Child will span that many cells</li>
+<li>Spans over any gap</li>
+</ul>
+</li>
+<li><code>grid-column: 3 / 6;</code><ul>
+<li>The <code>3</code> and <code>6</code> can be any number</li>
+<li>Think of the <code>/</code> as &quot;to&quot;</li>
+<li>Child will span from &quot;line&quot; 3 to &quot;line&quot; 6</li>
+<li>Lines are the start/end of cell boundaries</li>
+<li>Line 1 is left side of first cell</li>
+<li>Line 2 is right of first cell, left of 2nd</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="revisiting-grid-no-areas" class="slide" data-has-notes="false">
+<h1>Not Areas</h1><ul>
+<li>We used <code>grid-template-areas</code> and <code>grid-area</code><ul>
+<li>Those are still valid</li>
+<li>But we aren&#39;t using them here</li>
+<li>Different way of laying cells out</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="revisiting-grid-grid-without-grid" class="slide" data-has-notes="false">
+<h1>Grid layout without display: grid</h1><ul>
+<li>Grid column layout is a design idea<ul>
+<li>CSS Grids are a good way to implement</li>
+<li>...but not the only way</li>
+<li>Can do with flex</li>
+<li>Can do with percentage widths</li>
+</ul>
+</li>
+<li>Concept vs implementation<ul>
+<li>Different</li>
+<li>...but please use css grid</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="revisiting-grid-grid-impacts-children" class="slide" data-has-notes="false">
+<h1>display: grid impacts direct children</h1><p>Remember how <code>display: grid;</code> works</p>
+<ul>
+<li>Only affects direct children</li>
+<li>To match non-child elements to grid<ul>
+<li>Make wrapper width 100%</li>
+<li>Recreate the same grid inside wrapper</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-common-grid-layouts" class="chapter">
+<section id="common-grid-layouts-overview" class="slide" data-has-notes="false">
+<h1>Grid column layouts</h1><p>A common design pattern</p>
+<ul>
+<li>Page layout aligns to evenly spaced columns</li>
+<li>A row will contain items <ul>
+<li>Spanning cells</li>
+<li>Evenly or unevenly</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="common-grid-layouts-online-examples" class="slide" data-has-notes="false">
+<h1>Various Online Grid Layouts - Good and Bad</h1><p>Most not using CSS Grids, but are multi column grids</p>
+<ul>
+<li><a href="https://wines.com/">https://wines.com/</a></li>
+<li><a href="https://bostonglobe.com/">https://bostonglobe.com/</a></li>
+<li><a href="https://bbc.com/">https://bbc.com/</a></li>
+</ul>
+<p>Compare these:</p>
+<ul>
+<li><a href="https://allrecipes.com/">https://allrecipes.com/</a> - consistent &quot;break out&quot;</li>
+<li><a href="https://www.usfigureskating.org/">https://www.usfigureskating.org/</a> - inconsistent</li>
+</ul>
+<p>&quot;Choppy&quot; - Better if they used a grid:</p>
+<ul>
+<li><a href="https://www.usarchery.org/">https://www.usarchery.org/</a></li>
+</ul>
+</section>
+
+<section id="common-grid-layouts-example" class="slide" data-has-notes="false">
+<h1>Previous Iteration of NEU website</h1><p><a href="https://web.archive.org/web/20221231134920/https://www.northeastern.edu/">https://web.archive.org/web/20221231134920/https://www.northeastern.edu/</a>
+<img src="/images/12column-example.png"></p>
+</section>
+
+<section id="common-grid-layouts-alignment" class="slide" data-has-notes="false">
+<h1>Responsive Alignment</h1><p>Benefits of this column layout</p>
+<ul>
+<li>Allows mix of sizes</li>
+<li>Consistent alignment<ul>
+<li>Not off by a pixel or two</li>
+</ul>
+</li>
+<li>Don&#39;t need to declare areas<ul>
+<li>&quot;rows&quot; can auto wrap</li>
+</ul>
+</li>
+<li>Easily responsive<ul>
+<li>Cells evenly expand</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="common-grid-layouts-adaptive" class="slide" data-has-notes="false">
+<h1>Adaptive Alignment</h1><p>Another potential benefit</p>
+<ul>
+<li>Change the cells elements span<ul>
+<li>At different breakpoints<ul>
+<li>Mobile/Tablet/Desktop?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="common-grid-layouts-tablet-example" class="slide" data-has-notes="false">
+<h1>Adaptive Tablet Example</h1><p><img src="/images/tablet-example.png"></p>
+</section>
+
+<section id="common-grid-layouts-phone-example" class="slide" data-has-notes="false">
+<h1>Adaptive Phone Landscape Example</h1><p><img src="/images/phone-example.png"></p>
+</section>
+</section>
+
+<section id="chapter-column-grid" class="chapter">
+<section id="column-grid-overview" class="slide" data-has-notes="false">
+<h1>12 Column Grid</h1><ul>
+<li>Many grid layouts exist</li>
+<li>12 column is very common<ul>
+<li>Allows options for even spanning:<ul>
+<li>6 columns, 4 columns, 3 columns</li>
+</ul>
+</li>
+<li>Allows offset combos:<ul>
+<li>3+9, 4+8</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-why-12" class="chapter">
+<section id="why-12-overview" class="slide" data-has-notes="false">
+<h1>Why 12 columns though?</h1><ul>
+<li>Good number of options<ul>
+<li>Mostly</li>
+</ul>
+</li>
+<li>All subjective</li>
+</ul>
+</section>
+
+<section id="why-12-rule-of-thirds" class="slide" data-has-notes="false">
+<h1>Rule of Thirds</h1><p>In photography, the <strong>Rule of Thirds</strong> says</p>
+<ul>
+<li>Divide picture up into thirds</li>
+<li>Vertically and horizontally</li>
+<li>The 4 intersections are more &quot;visually interesting&quot;</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Rule_of_thirds">https://en.wikipedia.org/wiki/Rule_of_thirds</a></p>
+</section>
+
+<section id="why-12-has-thirds" class="slide" data-has-notes="false">
+<h1>12 Column Format allows for thirds</h1><p>Web Design is a little different than photography</p>
+<ul>
+<li>Photos don&#39;t scroll</li>
+</ul>
+<p>But you can still use that concept</p>
+<ul>
+<li>A 3+6 or 6+3 split <ul>
+<li>Puts center of an item at &quot;interesting&quot; point</li>
+</ul>
+</li>
+<li>A 4+8 or 8+4 can work if edges are interesting</li>
+</ul>
+</section>
+
+<section id="why-12-thirds-example" class="slide" data-has-notes="false">
+<p><img src="/images/thirds-example.png"></p>
+</section>
+</section>
+
+<section id="chapter-summary" class="chapter">
+<section id="summary-css-grids" class="slide" data-has-notes="false">
+<h1>Summary - CSS Grids</h1><ul>
+<li>We already used <code>grid-template-areas</code></li>
+<li>For multi-column layout<ul>
+<li>Can use <code>grid-template-columns</code><ul>
+<li>With <code>repeat()</code></li>
+<li>For evenly sized columns</li>
+<li>Optionally <code>gap</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>grid-column</code><ul>
+<li>Can take <code>span</code> to span cells</li>
+<li>Can use <code>/</code> to range from/to boundaries</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="summary-column-grid" class="slide" data-has-notes="false">
+<h1>Summary - 12 column grid</h1><ul>
+<li>Many grid layouts exist<ul>
+<li>Can be done without CSS Grids<ul>
+<li>But why?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>12 column very common in web dev  <ul>
+<li>Allows for different splits</li>
+</ul>
+</li>
+<li>Grids are naturally responsive</li>
+</ul>
+</section>
+
+<section id="summary-adaptive" class="slide" data-has-notes="false">
+<h1>Summary - Adaptive Grids</h1><p>Grids can make it easy to have adaptive breakpoints</p>
+<ul>
+<li>Change the number of total columns<ul>
+<li>Items will &quot;wrap&quot; to different rows</li>
+</ul>
+</li>
+<li>Change the span of different items<ul>
+<li>Will be a reasonable size</li>
+</ul>
+</li>
+</ul>
+<p>You can have multiple adaptive breakpoints</p>
+</section>
+</section></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+    </script>
+
+    <script src="js/dynamic-theme.js"></script><script src="js/custom.js"></script>
+
+  </body>
+</html>

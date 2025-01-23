@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Prez</title>
+
+    <meta name="description" content="-- DESCRIPTION HERE --">
+    <meta name="author" content="swiftone">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/highlight/styles/zenburn.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides"><section id="chapter-css-is-hard" class="chapter">
+<section id="css-is-hard-hard" class="slide" data-has-notes="false">
+<h1>CSS Can be hard</h1><ul>
+<li>Not a way of thinking you may be used to</li>
+<li>&quot;Simple&quot; concepts turn out to be hard<ul>
+<li>Ex: Centering </li>
+</ul>
+</li>
+<li>Efforts often break things that were working<ul>
+<li>Ex: Fixed widths</li>
+</ul>
+</li>
+<li>&quot;Newer&quot; options are <strong>fantastic</strong><ul>
+<li><strong>Flexbox</strong> (mid-2015)</li>
+<li><strong>Grids</strong> (mid-2017)</li>
+</ul>
+</li>
+<li>Like <strong>inline</strong> vs <strong>block</strong><ul>
+<li>Learn the bigger picture</li>
+<li>Not a list of properties</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-flexbox" class="chapter">
+<section id="flexbox-what" class="slide" data-has-notes="false">
+<h1>Why and What is Flexbox?</h1><p>Original CSS all based on how items (text) align in flow</p>
+<ul>
+<li>No grouping outside of containers with flow</li>
+<li>Everything based on the needs of content</li>
+</ul>
+<p><strong>Flexbox arranges child elements</strong></p>
+<ul>
+<li>Into row(s) or column(s)</li>
+<li>Most often, 1 row or 1 column</li>
+<li>Children set their base size</li>
+</ul>
+</section>
+
+<section id="flexbox-how" class="slide" data-has-notes="false">
+<h1>Weird Flex, but....</h1><ul>
+<li>Apply <code>display: flex;</code> to parent container</li>
+<li><strong>Flexbox arranges space <em>for</em> and <em>around</em> children</strong></li>
+<li>You can set flex-related properties on<ul>
+<li>The container (parent) <ul>
+<li>Effects all children</li>
+<li>Or space between them</li>
+</ul>
+</li>
+<li>On any child element<ul>
+<li>Effects that child</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="flexbox-guides" class="slide" data-has-notes="false">
+<h1>Key Flexbox Lessons and Guides</h1><ul>
+<li><code>display: flex</code> on parent<ul>
+<li>Only arranges direct child elements</li>
+</ul>
+</li>
+<li>Remember the difference between<ul>
+<li>Flex Properties on parent</li>
+<li>Flex Properties on children</li>
+</ul>
+</li>
+<li>A handy game-tutorial<ul>
+<li><a href="https://flexboxfroggy.com/">https://flexboxfroggy.com/</a></li>
+</ul>
+</li>
+<li>CSS Tricks has a famously good guide<ul>
+<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="flexbox-sample" class="slide" data-has-notes="false">
+<h1>Common Flexbox properties</h1><ul>
+<li><code>flex-direction</code> (column or row)</li>
+<li><code>justify-contents</code> space along main axis</li>
+<li><code>align-items</code> space along cross axis</li>
+</ul>
+</section>
+
+<section id="flexbox-menu-html" class="slide" data-has-notes="false">
+<h1>Common Menu Example</h1><pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Internet Cats<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles.css"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</section>
+
+<section id="flexbox-html-notes" class="slide" data-has-notes="false">
+<h1>Notes about our Menu HTML</h1><ul>
+<li>Very basic example </li>
+<li>Menus are a common situation</li>
+<li>Semantic <code>&lt;nav&gt;</code> is good<ul>
+<li>No visual effect</li>
+<li>Definite semantic effect</li>
+<li>Labels our &quot;navigation section&quot;<ul>
+<li>Not all links are in a <code>&lt;nav&gt;</code> section</li>
+</ul>
+</li>
+<li><code>&lt;menu&gt;</code> is for controls, not navigation</li>
+</ul>
+</li>
+<li>We are lacking class names<ul>
+<li>You will later switch to using class names</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="flexbox-examine-defaults" class="slide" data-has-notes="false">
+<h1>Look at our default styling in DevTools</h1><ul>
+<li>Inspect the element</li>
+<li>Select (click!) the <code>&lt;nav&gt;</code> in Elements<ul>
+<li>See <code>display: block;</code> in Styles</li>
+</ul>
+</li>
+<li>Hover over the <code>&lt;nav&gt;</code> <ul>
+<li>See the rendered highlight</li>
+</ul>
+</li>
+<li>Select the <code>&lt;ul&gt;</code> in Elements<ul>
+<li>Can&#39;t see Styles until you SELECT it!</li>
+<li>See default styling!</li>
+</ul>
+</li>
+<li>Hover over the <code>&lt;ul&gt;</code><ul>
+<li>See padding and margin highlights!</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="flexbox-override-defaults" class="slide" data-has-notes="false">
+<h1>Overriding the defaults</h1><ul>
+<li>You will later use class name selectors!<ul>
+<li>Type selectors don&#39;t scale<ul>
+<li>Compound selectors = likely conflicts</li>
+<li>Elements used for different purposes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">ul</span> { 
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>; 
+}
+</code></pre>
+</section>
+
+<section id="flexbox-bullet-points" class="slide" data-has-notes="false">
+<h1>Wait, where do the bullet points go?</h1><ul>
+<li>They are still there, just offscreen</li>
+<li>You can verify this:<ul>
+<li>In DevTools, SELECT (not just hover) the <code>&lt;ul&gt;</code></li>
+<li>Uncheck the <code>padding</code> in Styles<ul>
+<li>Checkbox visible again</li>
+</ul>
+</li>
+<li>Check the box again and now select the units<ul>
+<li>Press up/down to change the padding</li>
+<li>See the bullet points move on/offscreen</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="flexbox-remove-bullet-points" class="slide" data-has-notes="false">
+<h1>Let&#39;s remove the bullet points from our menu</h1><pre><code class="lang-css"><span class="hljs-selector-tag">ul</span> { 
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>; 
+
+    <span class="hljs-attribute">list-style-type</span>: none;
+}
+</code></pre>
+<ul>
+<li>You might WANT padding/margin/markers<ul>
+<li>Different situations have different decisions</li>
+</ul>
+</li>
+<li>I&#39;m just covering the process for when you decide</li>
+<li>See MDN for more options</li>
+</ul>
+</section>
+
+<section id="flexbox-flexbox" class="slide" data-has-notes="false">
+<h1>Let&#39;s use flexbox</h1><ul>
+<li><code>display: flex;</code> <strong>arranges child elements</strong></li>
+<li><code>&lt;ul&gt;</code> is parent of <code>&lt;li&gt;</code> elements</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">ul</span> {
+    <span class="hljs-attribute">display</span>: flex;
+
+    <span class="hljs-comment">/* other css here */</span>
+}
+</code></pre>
+<p>Now we have a (squished) row!</p>
+</section>
+
+<section id="flexbox-flex-direction" class="slide" data-has-notes="false">
+<h1>Before anything else: <code>flex-direction</code></h1><p><code>display: flex;</code> arranged our child elements in a <strong>row</strong></p>
+<ul>
+<li>Flexbox arranges children in one dimension</li>
+<li>We can also arrange vertically instead of horizontally</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">ul</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+
+    <span class="hljs-comment">/* other css here */</span>
+}
+</code></pre>
+<p>Let&#39;s set <code>flex-direction: row;</code> and keep going</p>
+</section>
+
+<section id="flexbox-spacing" class="slide" data-has-notes="false">
+<h1>Spacing with Flexbox</h1><ul>
+<li>Can set <code>margin</code>/<code>padding</code> on parent/children</li>
+<li>Can also set a <code>gap</code><ul>
+<li>Space between rows/columns</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">ul</span> { 
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">gap</span>: <span class="hljs-number">2rem</span>;
+}
+</code></pre>
+<p>What if we want an even distribution of space?</p>
+<ul>
+<li>Try <code>justify-content: space-around;</code></li>
+<li>Try <code>justify-content: space-between;</code></li>
+</ul>
+</section>
+
+<section id="flexbox-more-spacing" class="slide" data-has-notes="false">
+<h1>What if we wanted one element off to the right?</h1><ul>
+<li>Common way to center without flexbox/grid<ul>
+<li><code>margin: auto;</code></li>
+<li>Can also be used one just one side</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">ul</span> { <span class="hljs-comment">/* Better with class names */</span>
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">2rem</span>; <span class="hljs-comment">/* preventing a squish */</span>
+
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+
+  <span class="hljs-attribute">list-style-type</span>: none;
+}
+
+<span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span> { <span class="hljs-comment">/* MUCH better with class names */</span>
+    <span class="hljs-attribute">margin-left</span>: auto;
+}
+</code></pre>
+</section>
+
+<section id="flexbox-using-devtools" class="slide" data-has-notes="false">
+<h1>Using DevTools with Flexbox</h1><ul>
+<li>Notice <code>&lt;ul&gt;</code> has a &quot;flex&quot; next to in Elements</li>
+<li>On hover, element highlights flexbox<ul>
+<li>Also shows gap</li>
+</ul>
+</li>
+<li>Click the &quot;flex&quot; to see highlights w/o hover<ul>
+<li>Helps see last <code>&lt;li&gt;</code> taking up space</li>
+<li>Hover over last <code>&lt;li&gt;</code> element to see margin</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-css-grids" class="chapter">
+<section id="css-grids-why-what" class="slide" data-has-notes="false">
+<h1>CSS Grids</h1><p>Places child elements into cells</p>
+<ul>
+<li>Based on rows AND columns </li>
+</ul>
+<p>Grids mimic the old table-based layouts</p>
+<ul>
+<li>Without their pain</li>
+<li>Because layout (mostly) separate from structure</li>
+</ul>
+<p>Children can be told to span multiple &quot;cells&quot; of the grid</p>
+<p>Grids put the emphasis on the layout over the content</p>
+</section>
+
+<section id="css-grids-how" class="slide" data-has-notes="false">
+<h1>How to Grid</h1><p>Set parent container to <code>display: grid;</code></p>
+<ul>
+<li>Define template columns and/or rows</li>
+<li>Can define areas</li>
+</ul>
+<p>Later we&#39;ll examine using grids for <strong>multi-column grids</strong></p>
+<ul>
+<li>For now, we will use <strong>area labels</strong></li>
+</ul>
+</section>
+
+<section id="css-grids-guides" class="slide" data-has-notes="false">
+<h1>Guides to CSS Grids</h1><p>A game-tutorial</p>
+<ul>
+<li><a href="https://cssgridgarden.com/">https://cssgridgarden.com/</a></li>
+</ul>
+<p>CSS Tricks</p>
+<ul>
+<li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a></li>
+</ul>
+<p>Debugging with Chrome</p>
+<ul>
+<li><a href="https://developers.google.com/codelabs/devtools-debug-css-grid#0">https://developers.google.com/codelabs/devtools-debug-css-grid#0</a></li>
+</ul>
+</section>
+
+<section id="css-grids-areas" class="slide" data-has-notes="false">
+<h1>Grid areas (Other options later)</h1><ul>
+<li>Parent element:<ul>
+<li><code>grid-template-areas</code><ul>
+<li>Double quoted strings of space separated labels<ul>
+<li>No commas!</li>
+</ul>
+</li>
+<li>One string per row, label is column</li>
+</ul>
+</li>
+<li><code>grid-template-rows</code>, <code>grid-template-columns</code><ul>
+<li>Defines sizes of cells</li>
+<li><code>%</code> of available</li>
+<li><code>auto</code> matches needed space for content</li>
+<li><code>1fr</code> (or <code>2fr</code>, etc), divvy up remaining</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="css-grids-area-children" class="slide" data-has-notes="false">
+<h1>Grid areas, Child Elements</h1><ul>
+<li><code>grid-area</code><ul>
+<li>Give label (no quotes)</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="css-grids-example-html" class="slide" data-has-notes="false">
+<h1>Example HTML for a Grid</h1><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://placecats.com/50/50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"FIXME"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Cats of the Internet<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+  Footer text here
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+</section>
+
+<section id="css-grids-html-notes" class="slide" data-has-notes="false">
+<h1>Notes about our HTML</h1><ul>
+<li>Good semantic HTML<ul>
+<li><strong>landmark</strong> elements <ul>
+<li><strong>header</strong>, <strong>nav</strong>, <strong>main</strong>, <strong>footer</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Needs class names!<ul>
+<li>Assignment will use element types<ul>
+<li>To exercise your <strong>selector</strong> understanding</li>
+</ul>
+</li>
+<li>Later you should use <strong>semantic class names</strong><ul>
+<li>Element types will be used many ways</li>
+<li>Compound element selectors invite <strong>specificity issues</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Alt on logo was inadequate</li>
+</ul>
+</section>
+
+<section id="css-grids-using-grid" class="slide" data-has-notes="false">
+<h1>Using a Grid</h1><p><code>display: grid;</code> arranges <strong>children elements</strong></p>
+<ul>
+<li>NOT descendants<ul>
+<li>We have 4 child elements for our grid<ul>
+<li>Children of <code>&lt;body&gt;</code> here<ul>
+<li>That&#39;s not always the parent</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="css-grids-grid-devtools" class="slide" data-has-notes="false">
+<h1>Examining Our Grid</h1><pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { 
+    <span class="hljs-attribute">display</span>: grid;
+}
+</code></pre>
+<p>Doesn&#39;t really show any visual change!</p>
+<ul>
+<li>&quot;Inspect&quot; the <code>&lt;body&gt;</code> in DevTools<ul>
+<li>See the <code>display: grid;</code> in &quot;Styles&quot;</li>
+<li>See the &quot;grid&quot; next to element in &quot;Elements&quot;</li>
+<li>Hover over element start tag in &quot;Elements&quot;<ul>
+<li>See the grid lines in rendered HTML!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="css-grids-see-grid" class="slide" data-has-notes="false">
+<h1>Seeing the Grid in DevTools</h1><ul>
+<li>Click the word &quot;grid&quot; in &quot;Elements&quot;<ul>
+<li>Gridlines stay visible</li>
+<li>Also Numbers (covered later)<ul>
+<li>Can change display in &quot;Layouts&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You can see the 4 cells of the grid<ul>
+<li>The four children of the element <ul>
+<li>The element given <code>display: grid;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="css-grids-planning-grid" class="slide" data-has-notes="false">
+<h1>Planning our Grid</h1><p>We want a grid of 2 columns and 3 rows</p>
+<ul>
+<li>header (across full width)</li>
+<li>nav menu on the left, main content on right</li>
+<li>footer (across full width)</li>
+</ul>
+<p>What Dimensions?</p>
+<ul>
+<li>Start with column heights being &quot;auto&quot; <ul>
+<li>Based on height needed by content</li>
+</ul>
+</li>
+<li>Start with row widths being &quot;auto&quot;<ul>
+<li>Based on width needed by content</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="css-grids-trying-grid" class="slide" data-has-notes="false">
+<h1>Trying Multiple Columns</h1><pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { 
+    <span class="hljs-attribute">display</span>: grid; 
+    <span class="hljs-attribute">grid-template-columns</span>: auto auto; <span class="hljs-comment">/* 2 cols */</span>
+    <span class="hljs-attribute">grid-template-rows</span>: auto auto auto; <span class="hljs-comment">/* 3 rows */</span>
+}
+</code></pre>
+<p>Now we have a mess!</p>
+<ul>
+<li>2 rols, 2 cols, NOT 3 rows</li>
+<li>Parts are in the wrong cells</li>
+</ul>
+<p>Cells were auto-filled</p>
+<ul>
+<li>We never told page what goes where</li>
+<li>Defaulted to first-come-first-serve</li>
+</ul>
+</section>
+
+<section id="css-grids-what-are-areas" class="slide" data-has-notes="false">
+<h1>Explaining Named Grid Areas</h1><ul>
+<li>Multiple solutions to this!</li>
+<li>We will start with <strong>grid areas</strong></li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { 
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: auto auto;
+  <span class="hljs-attribute">grid-template-rows</span>: auto auto auto;
+  <span class="hljs-attribute">grid-template-areas</span>:
+    <span class="hljs-string">"header header"</span>  <span class="hljs-comment">/* Quoted lines */</span>
+    <span class="hljs-string">"menu main"</span>       <span class="hljs-comment">/* No commas between */</span>
+    <span class="hljs-string">"footer footer"</span>
+  ;
+}
+</code></pre>
+<p>Remember: Newlines and indentation are for HUMANS</p>
+<ul>
+<li>Browser doesn&#39;t care</li>
+<li>But <strong>Programming is Communication</strong></li>
+</ul>
+</section>
+
+<section id="css-grids-area-labels" class="slide" data-has-notes="false">
+<h1>Applying Grid Area Names</h1><ul>
+<li>That didn&#39;t change the appearance!</li>
+<li>We created area names<ul>
+<li>The labels happen to match element names</li>
+<li>(Mostly) Coincidence! Just labels!</li>
+</ul>
+</li>
+<li>Did NOT tell browser which elements to use</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">footer</span> { 
+    <span class="hljs-attribute">grid-area</span>: footer; <span class="hljs-comment">/* NOT quoted!*/</span>
+}
+</code></pre>
+<ul>
+<li>Now <code>&lt;footer&gt;</code> spans the page!</li>
+<li>Now 6 cells!</li>
+</ul>
+</section>
+
+<section id="css-grids-using-areas" class="slide" data-has-notes="false">
+<h1>Using Grid Areas</h1><pre><code class="lang-css"><span class="hljs-selector-tag">header</span> {
+    <span class="hljs-attribute">grid-area</span>: header;
+}
+</code></pre>
+<ul>
+<li>Now looks correct (so far)!</li>
+<li>BUT we never labeled the other areas<ul>
+<li>Working by coincidence!</li>
+<li>Always be complete, don&#39;t rely on luck</li>
+<li>Someone will later change the page</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">nav</span> { 
+    <span class="hljs-attribute">grid-area</span>: menu; <span class="hljs-comment">/* area names NOT the element name!*/</span>
+}
+<span class="hljs-selector-tag">main</span> { 
+    <span class="hljs-attribute">grid-area</span>: main;
+}
+</code></pre>
+</section>
+
+<section id="css-grids-sizes" class="slide" data-has-notes="false">
+<h1>Changing Width</h1><p>Navigation Menu is pretty wide</p>
+<ul>
+<li>Both columns are <code>auto</code> - evenly split</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">grid-template-columns</span>: <span class="hljs-selector-tag">auto</span> 1<span class="hljs-selector-tag">fr</span>;
+</code></pre>
+<p><strong>1fr</strong> means &quot;1 part of all parts left over&quot;</p>
+<ul>
+<li>1 &quot;fraction&quot;</li>
+<li>1 part out of 1 part - everything left after the <code>auto</code></li>
+</ul>
+</section>
+
+<section id="css-grids-squished" class="slide" data-has-notes="false">
+<h1>Now the Menu is too SQUISHED</h1><ul>
+<li>We can give the <code>&lt;nav&gt;</code> element some <code>padding</code></li>
+<li>OR we can give our grid a <strong>gap</strong><ul>
+<li>Distance between all cells</li>
+<li>See impact in DevTools!</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: auto <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">grid-template-rows</span>: auto auto auto;
+  <span class="hljs-attribute">grid-template-areas</span>:
+    <span class="hljs-string">"header header"</span>
+    <span class="hljs-string">"menu main"</span>
+    <span class="hljs-string">"footer footer"</span>
+  ;
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">1rem</span>;
+}
+</code></pre>
+</section>
+
+<section id="css-grids-footer-to-bottom" class="slide" data-has-notes="false">
+<h1>I want the footer at the bottom of the page!</h1><p>This is NOT a common desire!</p>
+<ul>
+<li>I&#39;m using this to teach some concepts</li>
+<li>Most pages either have enough content<ul>
+<li>Or aren&#39;t bothered</li>
+</ul>
+</li>
+<li>This is not a &quot;best practice&quot;<ul>
+<li>But it&#39;s not BAD either</li>
+<li>We will use it to learn</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="css-grids-what-bottom" class="slide" data-has-notes="false">
+<h1>The Footer IS at the bottom</h1><p>...of the <code>&lt;body&gt;</code> element</p>
+<p>Oh, you want it at the bottom of the viewport?</p>
+<ul>
+<li>Need to fill that with <code>&lt;body&gt;</code></li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { 
+    <span class="hljs-comment">/* Other stuff like grid stuff here */</span>
+
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+}
+</code></pre>
+<p><code>vh</code> is &quot;percent of viewport height&quot; units</p>
+<ul>
+<li><code>100vh</code> is 100% of viewport height</li>
+</ul>
+</section>
+
+<section id="css-grids-why-scrollbar" class="slide" data-has-notes="false">
+<h1>body 100vh gives us a scroll bar!</h1><p>This is because <code>body</code> defaults to <code>margin: 8px;</code></p>
+<ul>
+<li>Commonly solved by a <strong>CSS reset</strong><ul>
+<li>&quot;Resets&quot; browser CSS defaults<ul>
+<li>Before your specific changes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Common meaning of &quot;reset&quot; has evolved</li>
+<li>No longer stripping inconsistent browser defaults<ul>
+<li>More &quot;fixing&quot; unhelpful browser defaults</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { 
+    <span class="hljs-comment">/* Other stuff like grid stuff here */</span>
+
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>; <span class="hljs-comment">/* Perhaps move to a reset later */</span>
+}
+</code></pre>
+</section>
+
+<section id="css-grids-dvh-units" class="slide" data-has-notes="false">
+<h1>Works, but mobile has complication</h1><p>&quot;Viewport height&quot; gets a bit complicated on mobile</p>
+<ul>
+<li>Browser/OS may insert &quot;virtual&quot; controls<ul>
+<li>These will cover up part of the viewport!</li>
+<li>Why some sites have buttons that overlap with device controls</li>
+</ul>
+</li>
+<li>A new unit, <code>dvh</code> helps!<ul>
+<li>Recalculates height when controls appear</li>
+<li>BUT it is relatively recent!</li>
+<li>Not all users may have updated browsers!</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="css-grids-caniuse" class="slide" data-has-notes="false">
+<h1>Always check caniuse.com for feature support</h1><p><a href="http://caniuse.com/">http://caniuse.com/</a></p>
+<p>This is not a yes/no answer!</p>
+<ul>
+<li>Supported in all major browsers?</li>
+<li>For how long?</li>
+<li>Can you fallback?</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { 
+  <span class="hljs-comment">/* Other stuff like grid stuff here */</span>
+
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>; <span class="hljs-comment">/* Normally overridden by next line */</span>
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100</span>dvh; <span class="hljs-comment">/* Browser ignores unless understood */</span>
+
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>; <span class="hljs-comment">/* Perhaps move to a reset later */</span>
+}
+</code></pre>
+</section>
+
+<section id="css-grids-more-reset" class="slide" data-has-notes="false">
+<h1>Further complications</h1><p>What happens if we add padding?</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { 
+  <span class="hljs-comment">/* Other stuff like grid stuff here */</span>
+
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>; <span class="hljs-comment">/* Normally overridden by next line */</span>
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100</span>dvh; <span class="hljs-comment">/* Browser ignores unless understood */</span>
+
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>; <span class="hljs-comment">/* Perhaps move to a reset later */</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
+}
+</code></pre>
+<p>Scrollbar is back!</p>
+<ul>
+<li>By default <code>padding</code> is NOT part of content height</li>
+<li>This is controlled by <code>box-sizing</code> property</li>
+</ul>
+</section>
+
+<section id="css-grids-basic-reset" class="slide" data-has-notes="false">
+<h1>Basic CSS Reset</h1><p>You will build a list of changes you usually want by default</p>
+<pre><code class="lang-css">*, *<span class="hljs-selector-pseudo">::before</span>, *<span class="hljs-selector-pseudo">::after</span> { 
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+}
+</code></pre>
+</section>
+
+<section id="css-grids-vertical-mess" class="slide" data-has-notes="false">
+<h1>Body is now full height, but everything stretched</h1><p>Like when we the grid columns were evenly spaced</p>
+<ul>
+<li>Except with our row heights</li>
+<li>Want the header/footer only as tall as needed</li>
+<li>Want the menu/main row taking up extra space</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: auto <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">grid-template-rows</span>: auto <span class="hljs-number">1</span>fr auto; 
+
+  <span class="hljs-comment">/* other css here */</span>
+}
+</code></pre>
+</section>
+</section>
+
+<section id="chapter-summary" class="chapter">
+<section id="summary-flow" class="slide" data-has-notes="false">
+<h1>Summary - Flow</h1><p>Big common concepts in layout</p>
+<ul>
+<li><code>inline</code> (flow of text)</li>
+<li><code>block</code> (sections to organize)</li>
+</ul>
+<p>Controlled by <code>display</code> property</p>
+<p>Inline has limited sizing options</p>
+<ul>
+<li>Doesn&#39;t break text flowed</li>
+</ul>
+<p>Block has width AND breaks flow</p>
+<p><code>inline-block</code> - inline-like flow, block-like sizing</p>
+</section>
+
+<section id="summary-flexbox" class="slide" data-has-notes="false">
+<h1>Summary - Flexbox</h1><p>Layout beyond inline and block</p>
+<p><em>Arranges</em> child elements based on one dimension</p>
+<ul>
+<li>Distributes space</li>
+<li>Distributes space between/around</li>
+</ul>
+<p>Set by <code>display: flex;</code> (NOT <code>flexbox</code>)</p>
+<ul>
+<li>Other properties on parent and child</li>
+</ul>
+</section>
+
+<section id="summary-css-grid" class="slide" data-has-notes="false">
+<h1>Summary - CSS Grid</h1><p>Another option for layout beyond inline/block</p>
+<p><em>Places</em> child elements into cells formed by rows+cols</p>
+<ul>
+<li>Has &quot;cells&quot; to distribute space</li>
+</ul>
+<p>Set by <code>display: grid;</code></p>
+<ul>
+<li>Other properties on parent and child</li>
+<li>Set sizes for columns and/or rows</li>
+</ul>
+<p>Can label cells for content</p>
+<ul>
+<li>Content can span many cells</li>
+</ul>
+<p>Other options for assigning cells covered later</p>
+</section>
+</section></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+    </script>
+
+    <script src="js/dynamic-theme.js"></script><script src="js/custom.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,11 @@
+# Look at our default styling in DevTools
+- Inspect the element
+- Select (click!) the `<nav>` in Elements
+    - See `display: block;` in Styles
+- Hover over the `<nav>` 
+    - See the rendered highlight
+- Select the `<ul>` in Elements
+    - Can't see Styles until you SELECT it!
+    - See default styling!
+- Hover over the `<ul>`
+    - See padding and margin highlights!

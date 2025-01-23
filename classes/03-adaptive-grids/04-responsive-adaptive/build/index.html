@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Prez</title>
+
+    <meta name="description" content="-- DESCRIPTION HERE --">
+    <meta name="author" content="swiftone">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/highlight/styles/zenburn.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides"><section id="chapter-overview" class="chapter">
+<section id="overview-intro" class="slide" data-has-notes="false">
+<h1><strong>Responsive</strong> and <strong>Adaptive</strong> Designs</h1><ul>
+<li>Confusing Terminology</li>
+<li>&quot;<strong>Responsive</strong>&quot; can be an umbrella term for both<ul>
+<li>Or treated as distinct concept</li>
+</ul>
+</li>
+<li>Both about effective pages at different sizes</li>
+<li>Neither denies nor requires <strong>gutters</strong><ul>
+<li>Some designs don&#39;t go full width</li>
+<li>Essentially a max width on content</li>
+<li>Has empty/background &quot;gutters&quot; on sides</li>
+<li><a href="https://examplecat.com/">https://examplecat.com/</a> over 700px wide</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="overview-responsive" class="slide" data-has-notes="false">
+<h1><strong>Responsive</strong> Design</h1><ul>
+<li>A page that uses available size</li>
+<li>Content wraps as needed</li>
+<li>HTML is naturally responsive!<ul>
+<li>But we can mess it up with styling</li>
+<li>Important to regularly confirm you didn&#39;t</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="overview-adaptive" class="slide" data-has-notes="false">
+<h1><strong>Adaptive</strong> Design</h1><ul>
+<li>Changing layout at certain <strong>breakpoints</strong><ul>
+<li>Layout = Arrangement of elements</li>
+<li>Ex: Change number of blocks in a row</li>
+<li>Ex: Change row of items to column</li>
+<li>Ex: Menu becomes &quot;Hamburger Menu&quot;<ul>
+<li>See MDN as example</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Not automatic<ul>
+<li>Dev has to code the rules to apply this</li>
+</ul>
+</li>
+<li>Allows for good use of space<ul>
+<li>Not just wrapped use of space</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="overview-how" class="slide" data-has-notes="false">
+<h1>How?</h1><p>TL;DR: Usually <strong>Media queries</strong></p>
+<ul>
+<li>CSS operates off of 2+ options for layout<ul>
+<li>Based on <strong>viewport</strong> dimensions</li>
+<li>Can reorder elements in layout</li>
+<li>Can collapse menus/sections</li>
+</ul>
+</li>
+<li>May target:<ul>
+<li>Mobile/Desktop</li>
+<li>Mobile/tablet/desktop</li>
+<li>Landscape/portrait(s)/desktop/widescreen</li>
+<li>Or just where content fits better</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="overview-gray" class="slide" data-has-notes="false">
+<h1>Grey Area (Gray Area?)</h1><p>Is this Responsive or Adaptive?</p>
+<ul>
+<li>Media queries to how many items shown</li>
+<li>Flexbox/Grid to vary items/row w/o media query</li>
+</ul>
+<p>Read multiple search results: &quot;Responsive vs Adaptive&quot;</p>
+<ul>
+<li>Will get different answers</li>
+<li>Doesn&#39;t really matter<ul>
+<li>What we call it doesn&#39;t impact users</li>
+</ul>
+</li>
+<li>I&#39;ll call these &quot;Adaptive&quot;</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-example" class="chapter">
+<section id="example-plan" class="slide" data-has-notes="false">
+<h1>Simple example</h1><p>Page: </p>
+<ul>
+<li>header</li>
+<li>menu</li>
+<li>content</li>
+<li>footer</li>
+</ul>
+<p>Desktop size:</p>
+<ul>
+<li>Vertical to left of main content</li>
+</ul>
+<p>Mobile size:</p>
+<ul>
+<li>Horizontal menu across top of main content</li>
+</ul>
+</section>
+
+<section id="example-html" class="slide" data-has-notes="false">
+<h1>Sample HTML</h1><pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"header"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Kitten Co.<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"primary-nav"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Eat<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Sleep<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Blep<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+      Ipsum nemo iste vel lorem officiis dicta! 
+      Tenetur amet dolor ratione quas excepturi. Libero 
+      recusandae excepturi perspiciatis
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum repellendus magni soluta libero. 
+    Outtaus spaceum soa incorrectus indentingum<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"footer"</span>&gt;</span>
+    Gifts of catnip are accepted
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+</section>
+
+<section id="example-media-queries" class="slide" data-has-notes="false">
+<h1>Media Queries</h1><pre><code><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">1000px</span>) { <span class="hljs-comment">/* at least this width */</span>
+    <span class="hljs-comment">/* CSS Rules here */</span>
+}
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">1000px</span>) { <span class="hljs-comment">/* below this width */</span>
+}
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">600px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">1000px</span>) { 
+    <span class="hljs-comment">/* a middle size */</span>
+}
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-number">600px</span> &lt;= width &lt;= <span class="hljs-number">1000px</span> ) { 
+    <span class="hljs-comment">/* Newer range syntax (confirm age on caniuse.com) */</span>
+
+<span class="hljs-keyword">@media</span> (width &gt; <span class="hljs-number">760px</span>) { 
+    <span class="hljs-comment">/* Also newer range syntax - as of May 2023 for Safari*/</span>
+}
+
+</code></pre>
+</section>
+</section>
+
+<section id="chapter-viewport" class="chapter">
+<section id="viewport-but-mobile" class="slide" data-has-notes="false">
+<h1>But how do we test mobile?</h1><p>Not perfect, but helpful</p>
+<p>DevTools has many preset mobile options</p>
+<ul>
+<li>Why doesn&#39;t the mobile work?!</li>
+<li>Desktop resizing does!</li>
+</ul>
+</section>
+
+<section id="viewport-mobile-viewport" class="slide" data-has-notes="false">
+<h1>Mobile Cheats</h1><ul>
+<li>Layout viewport <ul>
+<li>Media query checks!</li>
+</ul>
+</li>
+<li>Visual viewport <ul>
+<li>Allows for zoom and pan</li>
+</ul>
+</li>
+</ul>
+<p>Most mobile devices render as if a larger size</p>
+<ul>
+<li>then zoom out</li>
+</ul>
+<p>Override with </p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width"</span>&gt;</span>
+</code></pre>
+</section>
+
+<section id="viewport-leave" class="slide" data-has-notes="false">
+<h1>Don&#39;t stay in mobile mode!</h1><p>I&#39;m not sure why many students do this</p>
+<ul>
+<li>Use mobile mode to test mobile sizes</li>
+<li>Use normal (desktop) mode normally</li>
+<li>Turn the mode on and off<ul>
+<li>Not just &quot;on&quot; once and forever</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-summary" class="chapter">
+<section id="summary-responsive" class="slide" data-has-notes="false">
+<h1>Summary - Responsive</h1><ul>
+<li>HTML is naturally <strong>responsive</strong><ul>
+<li>Content uses available space</li>
+<li>Height as needed</li>
+<li>Wraps as needed</li>
+</ul>
+</li>
+<li>Devs can mess it up with fixed sizes<ul>
+<li>Including text size assumptions</li>
+</ul>
+</li>
+<li>Remember your specific screen isn&#39;t &quot;normal&quot;<ul>
+<li>There is no &quot;normal&quot; screen size</li>
+</ul>
+</li>
+<li>Remember users may have different text sizes</li>
+</ul>
+</section>
+
+<section id="summary-adaptive" class="slide" data-has-notes="false">
+<h1>Summary - Adaptive</h1><ul>
+<li><strong>Adaptive</strong> sites change <strong>layout</strong><ul>
+<li>At different viewport <strong>breakpoints</strong></li>
+<li>Often shift horizontal layout to vertical</li>
+<li>Often collapse menus/sections</li>
+</ul>
+</li>
+<li>Implement with <strong>media queries</strong><ul>
+<li>Often the min-width/max-width</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="summary-remember" class="slide" data-has-notes="false">
+<h1>Summary - Setting Meta viewport</h1><ul>
+<li>Mobile often render with different viewport size<ul>
+<li>Then visually zooms in</li>
+</ul>
+</li>
+<li>Can cause disconnect with media queries</li>
+<li>Override with:</li>
+</ul>
+<pre><code>&lt;meta <span class="hljs-attribute">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-string">"width=device-width"</span>&gt;
+</code></pre><ul>
+<li>Easy to forget!</li>
+<li>Esp. if you don&#39;t use mobile view in DevTools</li>
+<li>Remember to do on assignments!</li>
+</ul>
+</section>
+</section></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+    </script>
+
+    <script src="js/dynamic-theme.js"></script><script src="js/custom.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,11 @@
+# Grid areas (Other options later)
+- Parent element:
+  - `grid-template-areas`
+    - Double quoted strings of space separated labels
+      - No commas!
+    - One string per row, label is column
+  - `grid-template-rows`, `grid-template-columns`
+    - Defines sizes of cells
+    - `%` of available
+    - `auto` matches needed space for content
+    - `1fr` (or `2fr`, etc), divvy up remaining
