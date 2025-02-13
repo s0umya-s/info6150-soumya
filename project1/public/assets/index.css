@@ -109,6 +109,28 @@ header {
   width: 100%; 
 }
 
+#c1 {
+  background: rgb(192, 4, 234);
+}
+#c2 {
+  background: rgb(70, 195, 209);
+}
+#c3 {
+  background: rgb(229, 48, 84);
+}
+#c4 {
+  background: rgb(160, 136, 220);
+}
+#c5 {
+  background: rgb(211, 225, 144);
+}
+#c6 {
+  background: rgb(139, 128, 137);
+}
+#c7 {
+  background: rgb(221, 161, 108);
+}
+
 .card-paragraph { 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: white;
