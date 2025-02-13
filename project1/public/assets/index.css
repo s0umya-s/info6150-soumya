@@ -1,17 +1,18 @@
 body { 
   font-family: Arial, sans-serif;
-  background-color: #333; 
+  background-color: #8eefa1; 
   margin: 0;
   padding: 0; 
 }
 
-#homepage { 
+#homepage #about #register { 
   width: 90%;
-  margin: 0 auto; 
+  margin: 0 auto;
+  padding: 20px;
 }
 
 header { 
-  background-color: rgb(74, 12, 74); 
+  background-color: #8eefa1; 
   width: 100%;
   text-align: center;
   padding: 10px 0;
@@ -19,49 +20,57 @@ header {
 
 #logo {
   width: 50px;
-  height: auto;
+  height: 50px;
   display: inline-block;
+  object-fit: cover;
 }
 
 .navbar {
-  background-color: #333;
+  background-color: #fb77b9;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar a, .dropdown .dropbtn {
-  font-size: 16px;
-  color: darkgray;
-  padding: 14px 16px;
-  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000;
+  padding: 2px;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(28, 21, 21);
+  background-color: #8eefa1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #a25d96;
-  min-width: 160px;
+  min-width: 100%;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 12px 16px 12px 16px;
   text-decoration: none;
   display: block;
 }
@@ -74,14 +83,21 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
-  padding: 20px;
+  padding: 14px 16px;
 }
 
 .grid-container2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 20px;
-  padding: 20px;
+  padding: 14px 16px;
+}
+
+.grid-container3 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  gap: 20px;
+  padding: 40px;
 }
 
 .card { 
@@ -93,10 +109,12 @@ header {
   width: 100%; 
 }
 
+
 .card img {
   width: 100%;
-  height: auto;
+  height: 200px;
   border-radius: 5px;
+  object-fit: cover; 
 }
 
 button { 
@@ -121,12 +139,15 @@ button:hover {
 }
 
 footer { 
-  background-color: plum; 
   text-align: center;
   color: black; 
   font-size: 14px;
   width: 100%;
-  padding: 10px; 
+  padding: 10px;
+  background-color: #fb77b9;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer a { 
