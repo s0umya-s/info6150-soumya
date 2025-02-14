@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./assets/index.css"/>
+</head>
+<body>
+    <div id="register">
+        <header>
+            <div class="navbar">
+                <a href="index.html">
+                    <img id="logo" src="assets/dino-logo.jpg" alt="My Dino Logo" />
+                </a>
+                <div class="dropdown">
+                  <button class="dropbtn">Menu 
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="register.html">Register</a>
+                  </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">External Links 
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="www.google.com">Google</a>
+                        <a href="www.wikipedia.com">Wikipedia</a>
+                        <a href="www.amazon.com">Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid-container4">
+            <div class="card-form">
+                <h2>Welcome to the registration page</h2>
+                <form action="'/register" method="POST">
+                    <label for="fname">First name*:</label>
+                    <input type="text" id="fname" name="fname" required>
+        
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname">
+        
+                    <label for="email">Enter your email*:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="reason1">
+                        <input type="checkbox" id="reason1" name="reason1" value="Love"> I love all Dinos
+                    </label>
+        
+                    <label for="reason2">
+                        <input type="checkbox" id="reason2" name="reason2" value="Trex"> I love only T-Rex
+                    </label>
+        
+                    <label for="reason3">
+                        <input type="checkbox" id="reason3" name="reason3" value="NoLove"> I'm not a Dino person, Sorry!
+                    </label>
+        
+                    <label for="because">Choose why you love dinos:</label>
+                    <select id="because" name="because">
+                        <option value="kids">Because my kids love them</option>
+                        <option value="tails">Because their tails are so interesting!</option>
+                        <option value="gigantic">Because they are so gigantic</option>
+                        <option value="dontlove">Who said I love them</option>
+                    </select>
+    
+                    <input type="submit" value="Submit" value="Register">
+                </form>   
+            </div>
+        </div>
+
+        <div class="col-1">
+            <footer>
+                Thank you for visiting me website. <a href="privacy.html">Privacy Policy</a>
+            </footer>
+        </div>
+    </body>
+</html> 
