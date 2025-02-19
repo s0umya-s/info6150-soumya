@@ -10,4 +10,3 @@ node_modules
  
 # Omitting this because 6150 students aren't writing for node
 package-lock.json
-.DS_Store
