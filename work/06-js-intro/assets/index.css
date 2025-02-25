@@ -9,6 +9,8 @@ body {
 font-family: 'Times New Roman';
 background-color: #f4f4f4;
 color: #333;
+display: flex;
+flex-direction: column;
 }
 
 
