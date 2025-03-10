@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Register</h1>
+    </header>
+    <main>
+        <form id="registration-form" action="/register" method="POST">
+            <div class="form-group">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name">
+                <p class="error-message" id="name-error"></p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="text" id="email" name="email">
+                <p class="error-message" id="email-error"></p>
+            </div>
+            <div class="form-group">
+                <label for="confirm-email">Confirm Email <span class="required">*</span></label>
+                <input type="text" id="confirm-email" name="confirm-email">
+                <p class="error-message" id="confirm-email-error"></p>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="wants-spam"> Subscribe to newsletters
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="tier">Select Tier</label>
+                <select id="tier" name="tier">
+                    <option value="free">Free</option>
+                    <option value="premium">Premium</option>
+                    <option value="pro">Pro</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Registration Form</p>
+    </footer>
+    
+</body>
+</html>
