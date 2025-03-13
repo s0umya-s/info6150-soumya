@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Famous Cats</title>
+    <title>Famous Internet Cats</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
 
+
     <header class="header">
         <img src="images/logo.png" alt="Logo of a cat" class="logo">
-        <h1>Famous Cats</h1>
+        <h1>Famous Internet Cats</h1>
         <nav class="nav">
             <button class="hamburger" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
@@ -23,30 +24,71 @@
     </header>
 
     <main id="main-content">
-        <h1>Famous Cats</h1>
+        <h1>Famous Internet Cats</h1>
         <section class="cat-cards">
             <div class="card">
-                <img src="images/cat3.jpg" alt="Grumpy Cat">
-                <p>Grumpy Cat, the internet sensation.</p>
-                <button class="subscribe-btn">Subscribe</button>
+                <h2>Jorts</h2>
+                <img src="images/cat1.jpg" alt="Jorts the Cat">
+                <p>Dolor nulla repellendus quisquam optio in. In optio distinctio doloremque.</p>
+                <p>Lorem ipsum sit <button class="subscribe-btn">Subscribe</button> voluptate inventore.</p>
+            </div>
+            <div class="card">
+                <h2>Jean</h2>
+                <img src="images/cat2.jpg" alt="Jean the Cat">
+                <p>Dolor nulla repellendus quisquam optio in. In optio distinctio doloremque.</p>
+                <p>Lorem ipsum sit <button class="subscribe-btn">Subscribe</button> voluptate inventore.</p>
+            </div>
+            <div class="card">
+                <h2>Maru</h2>
+                <img src="images/cat3.jpg" alt="Maru the Cat">
+                <p>Dolor nulla repellendus quisquam optio in. In optio distinctio doloremque.</p>
+                <p>Lorem ipsum sit <button class="subscribe-btn">Subscribe</button> voluptate inventore.</p>
+            </div>
+            <div class="card">
+                <h2>Nyancat</h2>
+                <img src="images/cat4.jpg" alt="Nyancat">
+                <p>Dolor nulla repellendus quisquam optio in. In optio distinctio doloremque.</p>
+                <p>Lorem ipsum sit <button class="subscribe-btn">Subscribe</button> voluptate inventore.</p>
+            </div>
+            <div class="card">
+                <h2>Grumpy Cat</h2>
+                <img src="images/cat5.jpg" alt="Grumpy Cat">
+                <p>Dolor nulla repellendus quisquam optio in. In optio distinctio doloremque.</p>
+                <p>Lorem ipsum sit <button class="subscribe-btn">Subscribe</button> voluptate inventore.</p>
+            </div>
+            <div class="card">
+                <h2>Lil Bub</h2>
+                <img src="images/cat6.jpg" alt="Lil Bub">
+                <p>Dolor nulla repellendus quisquam optio in. In optio distinctio doloremque.</p>
+                <p>Lorem ipsum sit <button class="subscribe-btn">Subscribe</button> voluptate inventore.</p>
             </div>
         </section>
     </main>
 
-    <!-- Modal -->
+
     <dialog id="subscribe-modal">
         <form method="dialog">
-            <h2>Subscribe to Cat News</h2>
-            <label>Email:
-                <input type="text" id="email">
-            </label>
-            <label>Confirm Email:
-                <input type="text" id="confirm-email">
-            </label>
-            <button type="submit">Subscribe</button>
+            <h2>Subscribe to the Latest Mews!</h2>
+            <label>Email: <span class="required">* required</span></label>
+            <input type="text" id="email">
+            
+            <label>Confirm Email: <span class="required">* required</span></label>
+            <input type="text" id="confirm-email">
+            
+            <button type="submit" class="modal-subscribe">Subscribe</button>
             <button class="close-modal">Cancel</button>
         </form>
     </dialog>
+
+
+    <footer class="footer">
+        <nav class="footer-nav">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Work for Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Social Media</a>
+        </nav>
+    </footer>
 
 </body>
 </html>

@@ -4,6 +4,7 @@ document.querySelector(".hamburger").addEventListener("click", function () {
     document.querySelector(".nav-links").classList.toggle("active");
 });
 
+
 const modal = document.getElementById("subscribe-modal");
 document.querySelectorAll(".subscribe-btn").forEach(button => {
     button.addEventListener("click", () => modal.showModal());
