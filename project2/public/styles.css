@@ -176,6 +176,16 @@ dialog::backdrop {
     cursor: pointer;
 }
 
+.ok-modal {
+    background: rgb(128, 150, 240);
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-items: center;
+}
+
 
 .footer {
     background: burlywood;
