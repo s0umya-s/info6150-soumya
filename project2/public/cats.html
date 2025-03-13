@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Cats</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <img src="images/logo.png" alt="Logo of a cat" class="logo">
+        <h1>Famous Cats</h1>
+        <nav class="nav">
+            <button class="hamburger" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cats.html">Famous Cats</a></li>
+                <li><a href="#">Cat Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h1>Famous Cats</h1>
+        <section class="cat-cards">
+            <div class="card">
+                <img src="images/cat3.jpg" alt="Grumpy Cat">
+                <p>Grumpy Cat, the internet sensation.</p>
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <dialog id="subscribe-modal">
+        <form method="dialog">
+            <h2>Subscribe to Cat News</h2>
+            <label>Email:
+                <input type="text" id="email">
+            </label>
+            <label>Confirm Email:
+                <input type="text" id="confirm-email">
+            </label>
+            <button type="submit">Subscribe</button>
+            <button class="close-modal">Cancel</button>
+        </form>
+    </dialog>
+
+</body>
+</html>

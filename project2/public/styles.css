@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: papayawhip;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: burlywood;
+    padding: 1rem;
+}
+
+.logo {
+    width: 100px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    border: none;
+    background: none;
+}
+
+@media (max-width: 44rem) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 2px solid black;
+    background: white;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.footer {
+    background: black;
+    color: white;
+    padding: 1rem;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+}
