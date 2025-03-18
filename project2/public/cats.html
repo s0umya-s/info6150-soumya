@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Internet Cats</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+
+    <header class="header">
+        <div class="logo-title">
+            <img src="images/logo.jpg" alt="Logo of a cat" class="logo">
+            <h1>Famous Internet Cats</h1>
+        </div>
+        
+        <nav class="nav">
+            <button class="hamburger" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cats.html">Famous Cats</a></li>
+                <li><a href="https://www.eventbrite.com/d/canada--toronto--downsview/cat-show/">Cat Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h1>Famous Internet Cats</h1>
+        <section class="cat-cards">
+            <div class="card">
+                <h2>Jorts</h2>
+                <img src="images/cat1.jpg" alt="Jorts the Cat">
+                <p>The lovable orange office cat who became an internet sensation for his hilarious antics.</p>
+                <p>Stay updated on the latest cat trends! Click <button class="subscribe-btn">Subscribe</button> now!</p>
+            </div>
+            <div class="card">
+                <h2>Jean</h2>
+                <img src="images/cat2.jpg" alt="Jean the Cat">
+                <p>Jorts’ smarter feline friend, known for her wisdom and patience, intelligence and caring nature.</p>
+                <p>Stay updated on the latest cat trends! Click <button class="subscribe-btn">Subscribe</button> now!</p>
+            </div>
+            <div class="card">
+                <h2>Maru</h2>
+                <img src="images/cat3.jpg" alt="Maru the Cat">
+                <p>The Japanese cat famous for his love of squeezing into boxes, no matter the size.</p>
+                <p>Stay updated on the latest cat trends! Click <button class="subscribe-btn">Subscribe</button> now!</p>
+            </div>
+            <div class="card">
+                <h2>Nyancat</h2>
+                <img src="images/cat4.jpg" alt="Nyancat">
+                <p>The pixelated rainbow-flying pop-tart cat that took the internet by storm.</p>
+                <p>Stay updated on the latest cat trends! Click <button class="subscribe-btn">Subscribe</button> now!</p>
+            </div>
+            <div class="card">
+                <h2>Grumpy Cat</h2>
+                <img src="images/cat5.jpg" alt="Grumpy Cat">
+                <p>The internet’s most famous grump, whose permanent scowl made her a meme legend.</p>
+                <p>Stay updated on the latest cat trends! Click <button class="subscribe-btn">Subscribe</button> now!</p>
+            </div>
+            <div class="card">
+                <h2>Lil Bub</h2>
+                <img src="images/cat6.jpg" alt="Lil Bub">
+                <p>The adorable perma-kitten with a unique tongue-out look and a heart of gold.</p>
+                <p>Stay updated on the latest cat trends! Click <button class="subscribe-btn">Subscribe</button> now!</p>
+            </div>
+        </section>
+    </main>
+
+
+
+<dialog id="subscribe-modal">
+    <form method="dialog">
+        <h2>Subscribe to the Latest Mews!</h2>
+        <label>Email: <span class="required">* required</span></label>
+        <input type="text" id="email">
+        
+        <label>Confirm Email: <span class="required">* required</span></label>
+        <input type="text" id="confirm-email">
+        
+        <button type="submit" class="modal-subscribe">Subscribe</button>
+        <button class="close-modal">Cancel</button>
+    </form>
+</dialog>
+
+
+<dialog id="success-modal">
+    <form method="dialog">
+        <h2>Great Mews! You've been successfully subscribed</h2>
+        <button class="ok-modal">Okay</button>
+    </form>
+</dialog>
+
+    <footer class="footer">
+        <nav class="footer-nav">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Work for Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Social Media</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
