@@ -18,7 +18,7 @@ export default function Modal() {
   return (
     <>
       <Button visual="link" onClick={handleOpen}>
-        Open Modal
+        Register Now!
       </Button>
       <dialog ref={dialogRef}>
         <form onSubmit={handleSubmit}>

@@ -1,4 +1,3 @@
-// Header.jsx
 export default function Header({ setPage }) {
     return (
       <header>
