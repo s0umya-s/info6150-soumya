@@ -28,15 +28,19 @@ main {
 }
 
 header {
-  background-color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #eb0606;
   color: white;
   padding: 1rem;
   text-align: center;
+  margin: 0;
 }
 
 footer {
   margin-top: auto;
-  background-color: #333;
+  background-color: #eb0606;
   color: white;
   padding: 1rem;
   text-align: center;
@@ -68,7 +72,7 @@ section {
 .btn-regular {
   padding: 0.5rem 1rem;
   margin: 20px;
-  background-color: #444;
+  background-color: #2c5ce0;
   color: white;
   border: none;
   border-radius: 4px;
