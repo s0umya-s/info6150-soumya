@@ -23,10 +23,12 @@ export default function Modal() {
       <dialog ref={dialogRef}>
         <form onSubmit={handleSubmit}>
           <p>Enter your email:</p>
-          <input type="email" required />
-          <Button type="submit" visual="link">
-            Submit
-          </Button>
+          <div className="form-row">
+            <input type="email" required />
+            <Button type="submit" visual="button">
+              Submit
+            </Button>
+          </div>
         </form>
       </dialog>
       {submitted && <p>Form submitted!</p>}

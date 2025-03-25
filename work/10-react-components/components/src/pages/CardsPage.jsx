@@ -6,16 +6,16 @@ export default function CardsPage({ setPage }) {
 
   return (
     <section>
-      <h2>Cards</h2>
+      <h2>Courses Offered</h2>
       <div className="cards">
         <div className="card">
-          <h3>Card 1</h3>
-          <p>Some details</p>
-          <Button onClick={() => setPage("text")}>Go to Text Page</Button>
+          <h3>INFO 5001</h3>
+          <p>Application Modeling & Design</p>
+          <Button onClick={() => setPage("text")}>Go to Home (Text) Page</Button>
         </div>
         <div className="card">
-          <h3>Card 2</h3>
-          <p>Static card</p>
+          <h3>INFO 5002</h3>
+          <p>Intro to Python for Info Sys</p>
         </div>
       </div>
       <Button visual="button" onClick={() => setClicked(true)}>

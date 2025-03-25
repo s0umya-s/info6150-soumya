@@ -1,18 +1,26 @@
-import Button from "../components/Button";
 import { useState } from "react";
+import Button from "../components/Button";
 
 export default function TextPage() {
-  const [clicked, setClicked] = useState(false);
+  const [linkClicked, setLinkClicked] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   return (
     <section>
-      <h2>Welcome to Button Explorer</h2>
-<p>This app demonstrates how different buttons work in a React SPA using only built-in tools.</p>
-<p>Below are two buttons – one styled like a link and another like a traditional button.</p>
-      <Button visual="link" onClick={() => setClicked(true)}>
+      <h2>Welcome to Northeastern University Home Page</h2>
+      <p>Play the button game testing by clicking each one of them</p>
+
+      <Button visual="link" onClick={() => setLinkClicked(true)}>
         Click Me (Link Style)
       </Button>
-      {clicked && <p>You clicked the link-style button!</p>}
+      {linkClicked && <p>You clicked the link-style button!</p>}
+
+      <br /><br />
+
+      <Button visual="button" onClick={() => setButtonClicked(true)}>
+        Click Me (Button Style)
+      </Button>
+      {buttonClicked && <p>You clicked the button-style button!</p>}
     </section>
   );
 }
