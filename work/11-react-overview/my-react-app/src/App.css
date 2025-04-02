@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  color: white;
+  padding: 10px;
+}
+
+.logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+.profile-pic-container {
+  position: relative;
+}
+
+.profile-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.dropdown p.fabulous {
+  color: hotpink;
+  font-weight: bold;
+}
+
+.home,
+.profile {
+  padding: 20px;
+}
+
+.edit-field {
+  margin: 10px 0;
+}
+
+.edit-field input,
+.edit-field select {
+  margin-left: 10px;
+}
+
+.edit-field button {
+  margin-left: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
+}
