@@ -6,19 +6,10 @@ export default function Header({ profile, navigate }) {
 
   return (
     <header className="header">
-      <img
-        src="/images/logo.png"
-        alt="Logo"
-        className="logo"
-        onClick={() => navigate('home')}
-      />
+      <img src="/images/logo.png" alt="Logo" className="logo" onClick={() => navigate('home')}/>
       <div className="profile-pic-container">
         <img
-          src={`/images/${profile.profilePic}`}
-          alt="Profile"
-          className="profile-pic"
-          onClick={() => setDropdownOpen((prev) => !prev)}
-          aria-expanded={dropdownOpen}
+          src={`/images/${profile.profilePic}`} alt="Profile" className="profile-pic" onClick={() => setDropdownOpen((prev) => !prev)} aria-expanded={dropdownOpen}
         />
         {dropdownOpen && (
           <Dropdown profile={profile} navigate={navigate} />
