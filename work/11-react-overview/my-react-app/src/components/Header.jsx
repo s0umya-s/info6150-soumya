@@ -25,5 +25,4 @@ export default function Header({ profile, navigate }) {
         )}
       </div>
     </header>
-  );
-}
+  )};
