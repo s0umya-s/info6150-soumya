@@ -1,0 +1,29 @@
+.navbar {
+    background-color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .navbar__brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar__nav button {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar__nav button:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar__user {
+    font-size: 1rem;
+  }

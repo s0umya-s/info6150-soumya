@@ -1,18 +1,46 @@
-Sources: 
-https://unsplash.com/photos/FRs7w0MZxJ0
-https://unsplash.com/photos/MGJpDJOzLE4
-https://unsplash.com/photos/6KkYYo-M6Fg
-https://unsplash.com/photos/3Kv48NS4WUU
-https://unsplash.com/photos/jUPOXXRNdcA
-https://unsplash.com/photos/9zG5j3GZV_Y
-https://unsplash.com/photos/ZrD-6lZqXOg
-https://unsplash.com/photos/ywqa9IZB-dU
-https://unsplash.com/photos/82TpEld0_e4
-https://unsplash.com/photos/8manzosRGPE
-https://unsplash.com/photos/tzl1UCXg5Es
-https://unsplash.com/photos/bIhpiQA009k
-https://unsplash.com/photos/V1eGLB_t4yI
-https://unsplash.com/photos/dJu77t6O-6M
-https://unsplash.com/photos/UXR--t8CZ1U
-
 License: Unsplash (https://unsplash.com/license)
+
+Image: strawberries.jpg
+Source: https://unsplash.com/photos/strawberry-lot-FCrgmqqvl-w
+
+Image: milk.jpg
+Source: https://unsplash.com/photos/itambe-natural-milk-carton-dxb_HSjoQ40
+
+Image: eggs.jpg
+Source: https://unsplash.com/photos/itambe-natural-milk-carton-dxb_HSjoQ40
+
+Image: bread.jpg
+Source: https://unsplash.com/photos/brown-bread-on-brown-wooden-tray-w2ZFjDnUL3w
+
+Image: spinach.jpg
+Source: https://unsplash.com/photos/green-leaves-on-brown-wooden-table-3YTtK5LRtDI
+
+Image: bananas.jpg
+Source: https://unsplash.com/photos/yellow-bananas-fczCr7MdE7U
+
+Image: carrots.jpg
+Source: https://unsplash.com/photos/a-bunch-of-carrots-sitting-on-top-of-a-cutting-board-q-kv8ncU2yQ
+
+Image: cheese.jpg
+Source: https://unsplash.com/photos/sliced-cheese-on-black-plate-beside-wine-glass-jeAjT87nbjM
+
+Image: almonds.jpg
+Source: https://unsplash.com/photos/brown-almond-nuts-on-white-ceramic-bowl-8LvXmMZuAU0
+
+Image: yogurt.jpg
+Source: https://unsplash.com/photos/simply-nature-organic-coconut-oil-v1Afu8vbEU8
+
+Image: apples.jpg
+Source: https://unsplash.com/photos/red-and-yellow-apples-on-yellow-plastic-container-jNi2SefV6bc
+
+Image: tomatoes.jpg
+Source: https://unsplash.com/photos/red-tomatoes-on-brown-wooden-table-eb26eV-ys_k
+
+Image: trailmix.jpg
+Source: https://unsplash.com/photos/cooked-beans-pUa1On18Jno
+
+Image: orangejuice.jpg
+Source: https://unsplash.com/photos/orange-juice-in-clear-drinking-glass-kkrXVKK-jhg
+
+Image: chips.jpg
+Source: https://unsplash.com/photos/blue-ceramic-mug-on-green-table-cloth--j2i9iMmznc
