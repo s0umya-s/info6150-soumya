@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/form.css";
 import ToastModal from "../components/ToastModal";
-import "../styles/toast.css";
+import "../styles/toastmodal.css";
 
 function Checkout({ cartItems }) {
   const [formData, setFormData] = useState({

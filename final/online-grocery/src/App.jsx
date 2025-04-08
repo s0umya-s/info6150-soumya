@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <a href="#main" className="skiplink">Skip to main content</a>
+      <a href="#main" className="skiplink">Skip to content</a>
       <Navbar setPage={setPage} displayName={displayName} />
       <main id="main" tabIndex="-1">{renderPage()}</main>
       <Footer />

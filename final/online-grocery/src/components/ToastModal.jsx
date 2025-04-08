@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/toast.css";
+import "../styles/toastmodal.css";
 
 function ToastModal({ show, message, onClose }) {
   return (
