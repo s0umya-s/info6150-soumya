@@ -67,7 +67,7 @@ export const products = [
       name: "Greek Yogurt",
       price: 3.29,
       category: "Dairy",
-      image: "/assets/yogurt.jpg"
+      image: "/assets/yoghurt.jpg"
     },
     {
       id: 11,
