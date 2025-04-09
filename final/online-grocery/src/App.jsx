@@ -12,12 +12,12 @@ import "./styles/layout.css";
 function App() {
   const [page, setPage] = useState("home");
   const [cartItems, setCartItems] = useState([]);
-  const [displayName, setDisplayName] = useState("Guest");
+  const [displayName, setDisplayName] = useState("Northeastern University");
 
   const renderPage = () => {
     switch (page) {
       case "shop":
-        return <Shop cartItems={cartItems} setCartItems={setCartItems} />;
+        return <Shop setPage={setPage} cartItems={cartItems} setCartItems={setCartItems} />;
       case "cart":
         return <Cart cartItems={cartItems} setPage={setPage} />;
       case "checkout":

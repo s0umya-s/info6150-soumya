@@ -4,7 +4,7 @@ import "../styles/layout.css";
 function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; 2025 FreshMart. All rights reserved.</p>
+      <p>© 2025 Curbside Mart- INFO 6150 Soumya Singh NUID 002309707</p>
     </footer>
   );
 }

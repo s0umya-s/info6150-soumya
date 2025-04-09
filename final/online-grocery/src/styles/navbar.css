@@ -26,4 +26,11 @@
   
   .navbar__user {
     font-size: 1rem;
+    color: green;
+  }
+
+  .navbar__logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
   }

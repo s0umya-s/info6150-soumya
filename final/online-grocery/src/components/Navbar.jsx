@@ -4,7 +4,8 @@ import "../styles/navbar.css";
 function Navbar({ setPage, displayName }) {
   return (
     <header className="navbar">
-      <h1 className="navbar__brand">FreshMart</h1>
+      <img src="/assets/logo.jpg
+      " alt="Curbside Mart logo" className="navbar__logo" />
       <nav className="navbar__nav">
         <button onClick={() => setPage("home")}>Home</button>
         <button onClick={() => setPage("shop")}>Shop</button>

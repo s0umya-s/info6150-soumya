@@ -44,3 +44,12 @@ Source: https://unsplash.com/photos/orange-juice-in-clear-drinking-glass-kkrXVKK
 
 Image: chips.jpg
 Source: https://unsplash.com/photos/blue-ceramic-mug-on-green-table-cloth--j2i9iMmznc
+
+Image: grab-bag.jpg
+Source: https://unsplash.com/photos/a-man-holding-a-paper-bag-in-front-of-a-bunch-of-bananas-wM50YUQ3Dyc
+
+Image: pick-up.jpg
+Source: https://unsplash.com/photos/black-car-on-pedestrian-lane-during-daytime-Hwkl6xh-6Ag
+
+Image: logo.jpg
+Source: created
