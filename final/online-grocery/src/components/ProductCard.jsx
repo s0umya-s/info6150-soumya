@@ -12,7 +12,7 @@ function ProductCard({ product, addToCart, increaseQty, decreaseQty, qty }) {
       <p className="product-card__price">${product.price.toFixed(2)}</p>
 
       {qty === 0 ? (
-        <button className="btn-regular" onClick={addToCart}>
+        <button className="btn-add" onClick={addToCart}>
           Add to Cart
         </button>
       ) : (

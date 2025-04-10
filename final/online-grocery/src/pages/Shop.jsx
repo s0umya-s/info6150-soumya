@@ -4,6 +4,7 @@ import ProductCard from "../components/ProductCard";
 import FilterSort from "../components/FilterSort";
 import Button from "../components/Button";
 import "../styles/shop.css";
+import "../styles/progressbar.css"
 
 function Shop({ cartItems, setCartItems, setPage }) {
   const [category, setCategory] = useState("All");
@@ -42,16 +43,25 @@ function Shop({ cartItems, setCartItems, setPage }) {
     return a.name.localeCompare(b.name);
   });
 
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
+  
   return (
     <section className="shop-container">
       <div className="progress-bar">
         <div className="step active">1. Shop</div>
+        <div className="arrow">→</div>
         <div className="step">2. Cart</div>
+        <div className="arrow">→</div>
         <div className="step">3. Checkout</div>
+        <div className="arrow">→</div>
         <div className="step">4. Done</div>
       </div>
 
-      <h2>Shop for Groceries</h2>
+      <h2>Select items. </h2>
+      <h4>These items will be handpicked and packed for you, ready to be picked up at our curb</h4>
 
       <FilterSort
         category={category}
@@ -78,6 +88,7 @@ function Shop({ cartItems, setCartItems, setPage }) {
       </div>
 
       <div className="hero__button">
+        <h3>Total: ${total.toFixed(2)}</h3>
         <Button onClick={() => setPage("cart")}>
           Preview Cart
         </Button>

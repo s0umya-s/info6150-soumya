@@ -1,92 +1,95 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "../styles/form.css";
+import "../styles/toastmodal.css";
+import ButtonAdd from "../components/ButtonAdd";
+import ToastModal from "../components/ToastModal";
 
-function Contact({ displayName, setDisplayName }) {
-  const [formData, setFormData] = useState({ name: "", message: "" });
+function Contact({ setPage }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
   const [errors, setErrors] = useState({});
-  const dialogRef = useRef(null);
-  const [tempName, setTempName] = useState(displayName);
+  const [showToast, setShowToast] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required.";
-    if (!formData.message.trim()) newErrors.message = "Message cannot be empty.";
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      alert("Message sent!");
-      setFormData({ name: "", message: "" });
-    }
-  };
+    const newErrors = {};
 
-  const openModal = () => {
-    setTempName(displayName);
-    dialogRef.current.showModal();
-  };
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.email.trim()) newErrors.email = "Email is required.";
+    else if (!formData.email.includes("@")) newErrors.email = "Enter a valid email.";
+    if (!formData.message.trim()) newErrors.message = "Message field cannot be left blank.";
 
-  const saveDisplayName = () => {
-    if (tempName.trim()) {
-      setDisplayName(tempName.trim());
-      dialogRef.current.close();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      setShowToast(true);
+      setFormData({ name: "", email: "", message: "" });
     }
   };
 
   return (
-    <section>
+    <section className="checkout-container">
       <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit} className="checkout-form" noValidate>
-        <label htmlFor="contact-name">Your Name</label>
-        <input
-          id="contact-name"
-          name="name"
-          type="text"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        {errors.name && <div className="error">{errors.name}</div>}
 
-        <label htmlFor="contact-message">Message</label>
-        <input
-          id="contact-message"
-          name="message"
-          type="text"
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {errors.message && <div className="error">{errors.message}</div>}
+      <form className="checkout-form" onSubmit={handleSubmit} noValidate>
+        <div className="form-group">
+          <label htmlFor="name">Name*</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            value={formData.name}
+            onChange={handleChange}
+            className={errors.name ? "invalid" : ""}
+          />
+          {errors.name && <div className="error">{errors.name}</div>}
+        </div>
 
-        <button type="submit">Send Message</button>
+        <div className="form-group">
+          <label htmlFor="email">Email*</label>
+          <input
+            id="email"
+            name="email"
+            type="text"
+            value={formData.email}
+            onChange={handleChange}
+            className={errors.email ? "invalid" : ""}
+          />
+          {errors.email && <div className="error">{errors.email}</div>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="message">Message*</label>
+          <input
+            id="message"
+            name="message"
+            type="text"
+            value={formData.message}
+            onChange={handleChange}
+            className={errors.message ? "invalid" : ""}
+          />
+          {errors.message && <div className="error">{errors.message}</div>}
+        </div>
+
+        <div className="checkout-buttons">
+          <ButtonAdd type="submit">Send Message</ButtonAdd>
+        </div>
       </form>
 
-      <hr />
-      <h3>Edit Your Display Name</h3>
-      <p>This is the name shown on the navbar (currently: <strong>{displayName}</strong>)</p>
-      <button onClick={openModal}>Edit Display Name</button>
-
-      <dialog ref={dialogRef}>
-        <form method="dialog" className="checkout-form">
-          <label htmlFor="edit-name">New Display Name</label>
-          <input
-            id="edit-name"
-            type="text"
-            value={tempName}
-            onChange={(e) => setTempName(e.target.value)}
-          />
-          <div>
-            <button type="button" onClick={saveDisplayName}>Save</button>
-            <button type="button" onClick={() => dialogRef.current.close()}>Cancel</button>
-          </div>
-        </form>
-      </dialog>
+      <ToastModal
+        show={showToast}
+        message="Your message has been sent! We'll be in touch shortly."
+        onClose={() => setShowToast(false)}
+      />
     </section>
   );
 }

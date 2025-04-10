@@ -22,8 +22,6 @@ main {
   font-size: 0.875rem;
 }
 
-
-
 .skiplink {
   position: absolute;
   left: -999px;
@@ -55,7 +53,7 @@ main {
   font-size: 1rem;
   width: max-content;
   display:flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .btn-regular:hover {
@@ -63,16 +61,20 @@ main {
   color: black;
 }
 
-.btn-link {
-  background: none;
+.btn-add {
+  padding: 0.5rem 1rem;
+  margin: 20px auto; 
+  background-color: green;
+  color: white;
   border: none;
-  color: blue;
+  border-radius: 4px;
   cursor: pointer;
-  text-decoration: underline;
   font-size: 1rem;
-  margin-top: 1rem;
+  width: max-content;
+  display: block;
 }
 
-.btn-link:hover {
-  color: darkblue;
+.btn-add:hover {
+  background-color: bisque;
+  color: black;
 }

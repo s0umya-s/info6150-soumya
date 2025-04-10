@@ -1,89 +1,125 @@
 import React, { useState } from "react";
 import "../styles/form.css";
-import ToastModal from "../components/ToastModal";
 import "../styles/toastmodal.css";
+import "../styles/progressbar.css"
+import Button from "../components/Button";
 
-function Checkout({ cartItems }) {
+function Checkout({ cartItems, setPage }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     shipping: "",
     billing: "",
     deliveryType: "curbside",
-    billingSame: true
+    billingSame: true,
   });
 
   const [errors, setErrors] = useState({});
+
   const [showToast, setShowToast] = useState(false);
+  const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-      ...(name === "billingSame" && checked ? { billing: prev.shipping } : {})
-    }));
+
+    setFormData((prev) => {
+      const updated = {
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      };
+
+      if (name === "billingSame" && checked) {
+        updated.billing = prev.shipping;
+      }
+
+      return updated;
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newErrors = {};
+
     if (!formData.name.trim()) newErrors.name = "Name is required.";
-    if (!formData.email.trim() || !formData.email.includes("@")) newErrors.email = "Valid email required.";
-    if (!formData.shipping.trim()) newErrors.shipping = "Shipping address required.";
-    if (!formData.billing.trim() && !formData.billingSame) newErrors.billing = "Billing address required.";
+    if (!formData.email.trim()) newErrors.email = "Email is required.";
+    else if (!formData.email.includes("@")) newErrors.email = "Enter a valid email.";
+    if (!formData.shipping.trim()) newErrors.shipping = "Shipping address is required.";
+    if (!formData.billingSame && !formData.billing.trim()) newErrors.billing = "Billing address is required.";
 
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
       setShowToast(true);
+      setTimeout(() => {
+        setShowToast(false);
+        setPage("done");
+      }, 2000);
     }
   };
 
   return (
-    <section>
+    <section className="shop-container">
+      <div className="progress-bar">
+        <div className="step">1. Shop</div>
+        <div className="arrow">→</div>
+        <div className="step">2. Cart</div>
+        <div className="arrow">→</div>
+        <div className="step active">3. Checkout</div>
+        <div className="arrow">→</div>
+        <div className="step">4. Done</div>
+      </div>
+
       <h2>Checkout</h2>
+
       {cartItems.length === 0 ? (
-        <p>Your cart is empty. Please add items before checking out.</p>
+        <p>Your cart is empty. <button onClick={() => setPage("shop")}>Go to Shop</button></p>
       ) : (
         <>
           <form className="checkout-form" onSubmit={handleSubmit} noValidate>
-            <label htmlFor="name">Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              value={formData.name}
-              onChange={handleChange}
-              aria-describedby="name-error"
-            />
-            {errors.name && <div id="name-error" className="error">{errors.name}</div>}
+            <div className="form-group">
+              <label htmlFor="name">Name*</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                value={formData.name}
+                onChange={handleChange}
+                className={errors.name ? "invalid" : ""}
+                aria-describedby={errors.name ? "name-error" : undefined}
+              />
+              {errors.name && <div className="error" id="name-error">{errors.name}</div>}
+            </div>
 
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="text"
-              value={formData.email}
-              onChange={handleChange}
-              aria-describedby="email-error"
-            />
-            {errors.email && <div id="email-error" className="error">{errors.email}</div>}
+            <div className="form-group">
+              <label htmlFor="email">Email*</label>
+              <input
+                id="email"
+                name="email"
+                type="text"
+                value={formData.email}
+                onChange={handleChange}
+                className={errors.email ? "invalid" : ""}
+                aria-describedby={errors.email ? "email-error" : undefined}
+              />
+              {errors.email && <div className="error" id="email-error">{errors.email}</div>}
+            </div>
 
-            <label htmlFor="shipping">Shipping Address</label>
-            <input
-              id="shipping"
-              name="shipping"
-              type="text"
-              value={formData.shipping}
-              onChange={handleChange}
-              aria-describedby="shipping-error"
-            />
-            {errors.shipping && <div id="shipping-error" className="error">{errors.shipping}</div>}
+            <div className="form-group">
+              <label htmlFor="shipping">Shipping Address*</label>
+              <input
+                id="shipping"
+                name="shipping"
+                type="text"
+                value={formData.shipping}
+                onChange={handleChange}
+                className={errors.shipping ? "invalid" : ""}
+                aria-describedby={errors.shipping ? "shipping-error" : undefined}
+              />
+              {errors.shipping && <div className="error" id="shipping-error">{errors.shipping}</div>}
+            </div>
 
             <fieldset>
-              <legend>Delivery Option</legend>
+              <legend>Delivery Option*</legend>
               <label>
                 <input
                   type="radio"
@@ -101,8 +137,9 @@ function Checkout({ cartItems }) {
                   value="home"
                   checked={formData.deliveryType === "home"}
                   onChange={handleChange}
+                  disabled
                 />
-                Home Delivery
+                Home Delivery (Not available)
               </label>
             </fieldset>
 
@@ -117,28 +154,29 @@ function Checkout({ cartItems }) {
             </label>
 
             {!formData.billingSame && (
-              <>
-                <label htmlFor="billing">Billing Address</label>
+              <div className="form-group">
+                <label htmlFor="billing">Billing Address*</label>
                 <input
                   id="billing"
                   name="billing"
                   type="text"
                   value={formData.billing}
                   onChange={handleChange}
-                  aria-describedby="billing-error"
+                  className={errors.billing ? "invalid" : ""}
+                  aria-describedby={errors.billing ? "billing-error" : undefined}
                 />
-                {errors.billing && <div id="billing-error" className="error">{errors.billing}</div>}
-              </>
+                {errors.billing && <div className="error" id="billing-error">{errors.billing}</div>}
+              </div>
             )}
 
-            <button type="submit">Place Order</button>
+            <div className="cart-total">
+              <Button type="button" onClick={() => setPage("cart")}>
+                Go Back to Cart
+              </Button>
+              <h3>Total: ${total.toFixed(2)}</h3>
+              <Button onClick={() => setPage("done")}>Place your order</Button>
+            </div>
           </form>
-
-          <ToastModal
-            show={showToast}
-            message="Order submitted!"
-            onClose={() => setShowToast(false)}
-          />
         </>
       )}
     </section>

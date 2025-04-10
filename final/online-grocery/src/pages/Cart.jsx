@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/cart.css";
+import "../styles/progressbar.css";
 import Button from "../components/Button";
 
 function Cart({ cartItems, setCartItems, setPage }) {
@@ -23,11 +24,14 @@ function Cart({ cartItems, setCartItems, setPage }) {
   );
 
   return (
-    <section className="cart-container">
+    <section className="shop-container">
       <div className="progress-bar">
         <div className="step">1. Shop</div>
+        <div className="arrow">→</div>
         <div className="step active">2. Cart</div>
+        <div className="arrow">→</div>
         <div className="step">3. Checkout</div>
+        <div className="arrow">→</div>
         <div className="step">4. Done</div>
       </div>
 
@@ -54,6 +58,9 @@ function Cart({ cartItems, setCartItems, setPage }) {
             ))}
 
           <div className="cart-total">
+            <Button type="button" onClick={() => setPage("shop")}>
+              Go Back to Shop
+            </Button>
             <h3>Total: ${total.toFixed(2)}</h3>
             <Button onClick={() => setPage("checkout")}>Proceed to Checkout</Button>
           </div>

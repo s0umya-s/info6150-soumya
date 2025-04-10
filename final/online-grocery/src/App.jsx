@@ -6,6 +6,7 @@ import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Contact from "./pages/Contact";
+import Done from "./pages/Done"; // ✅ Don't forget this import
 import "./styles/responsive.css";
 import "./styles/layout.css";
 
@@ -21,9 +22,11 @@ function App() {
       case "cart":
         return <Cart cartItems={cartItems} setPage={setPage} />;
       case "checkout":
-        return <Checkout cartItems={cartItems} />;
+        return <Checkout cartItems={cartItems} setPage={setPage} />;
       case "contact":
         return <Contact displayName={displayName} setDisplayName={setDisplayName} />;
+      case "done":
+        return <Done setPage={setPage} />; // ✅ Fixed line
       default:
         return <Home setPage={setPage} />;
     }

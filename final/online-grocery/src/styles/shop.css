@@ -3,6 +3,7 @@
     gap: 1rem;
     margin: 1rem 0;
     flex-wrap: wrap;
+    justify-content: center;
   }
   
   .product-grid {
@@ -12,7 +13,7 @@
   }
   
   .product-card {
-    border: 1px solid #ddd;
+    border: 1px solid sienna;
     border-radius: 0.5rem;
     overflow: hidden;
     background: #fff;
@@ -22,7 +23,7 @@
   
   .product-card img {
     width: 100%;
-    height: 160px;
+    height: 120px;
     object-fit: cover;
   }
   
@@ -39,62 +40,8 @@
   }
 
 .shop-container {
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-.progress-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: #f7f7f7;
-  position: relative;
-  overflow: hidden;
-}
-
-.step {
-  flex: 1;
-  text-align: center;
-  font-weight: bold;
-  color: #aaa;
-  position: relative;
-  z-index: 2;
-}
-
-.step.active {
-  color: #2c5ce0;
-}
-
-.step::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -50%;
-  left: 50%;
-  height: 2px;
-  background-color: #ddd;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.step:last-child::after {
-  display: none;
-}
-
-.btn-regular {
-  padding: 0.5rem 1rem;
-  margin: 20px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  width: max-content;
-  display:flex;
-  justify-content: center;
-}
