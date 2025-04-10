@@ -35,7 +35,10 @@ function Cart({ cartItems, setCartItems, setPage }) {
         <div className="step">4. Done</div>
       </div>
 
-      <h2>Your Cart</h2>
+      <div className="step-header">
+        <Button type="button" onClick={() => setPage("shop")}>←</Button>
+        <h2>Your Cart</h2>
+      </div>
 
       {cartItems.length === 0 ? (
         <p>Your cart is empty. <Button onClick={() => setPage("shop")}>Shop Now</Button></p>
@@ -58,9 +61,6 @@ function Cart({ cartItems, setCartItems, setPage }) {
             ))}
 
           <div className="cart-total">
-            <Button type="button" onClick={() => setPage("shop")}>
-              Go Back to Shop
-            </Button>
             <h3>Total: ${total.toFixed(2)}</h3>
             <Button onClick={() => setPage("checkout")}>Proceed to Checkout</Button>
           </div>

@@ -60,8 +60,13 @@ function Shop({ cartItems, setCartItems, setPage }) {
         <div className="step">4. Done</div>
       </div>
 
-      <h2>Select items. </h2>
-      <h4>These items will be handpicked and packed for you, ready to be picked up at our curb</h4>
+      <div className="step-header">
+  <Button type="button" onClick={() => setPage("home")}>←</Button>
+  <div className="step-header__text">
+    <h2>Select items</h2>
+    <h4>These items will be picked and packed for you, ready to be picked up at our curb</h4>
+    </div>
+  </div>
 
       <FilterSort
         category={category}
