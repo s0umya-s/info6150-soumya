@@ -12,14 +12,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   
-  .product-card {
-    border: 1px solid sienna;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-  }
+
   
   .product-card img {
     width: 100%;
@@ -44,4 +37,5 @@
   margin: 0 auto;
   padding: 2rem 1rem;
 }
+
 

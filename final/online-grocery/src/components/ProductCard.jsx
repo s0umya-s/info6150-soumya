@@ -12,15 +12,18 @@ function ProductCard({ product, addToCart, increaseQty, decreaseQty, qty }) {
       <p className="product-card__price">${product.price.toFixed(2)}</p>
 
       {qty === 0 ? (
-        <button className="btn-add" onClick={addToCart}>
-          Add to Cart
-        </button>
-      ) : (
-        <div className="product-card__qty-controls">
-          <button onClick={decreaseQty} aria-label={`Decrease ${product.name}`}>−</button>
-          <span>{qty}</span>
-          <button onClick={increaseQty} aria-label={`Increase ${product.name}`}>+</button>
-        </div>
+  <button className="btn-add" onClick={addToCart}>
+    Add to Cart
+  </button>
+) : (
+  <div className="product-card__qty-controls">
+    <div className="qty-buttons">
+      <button onClick={decreaseQty} aria-label={`Decrease quantity of ${product.name}`}>−</button>
+      <span>{qty}</span>
+      <button onClick={increaseQty} aria-label={`Increase quantity of ${product.name}`}>+</button>
+    </div>
+    <p className="scroll-reminder">Scroll down when done</p>
+  </div>
       )}
     </div>
   );

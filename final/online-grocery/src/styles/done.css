@@ -24,3 +24,11 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .done-image {
+    max-width: 300px;
+    width: 100%;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 5px;
+  }

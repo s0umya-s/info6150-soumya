@@ -20,7 +20,7 @@ function App() {
       case "shop":
         return <Shop setPage={setPage} cartItems={cartItems} setCartItems={setCartItems} />;
       case "cart":
-        return <Cart cartItems={cartItems} setPage={setPage} />;
+        return <Cart cartItems={cartItems} setCartItems={setCartItems} setPage={setPage} />
       case "checkout":
         return <Checkout cartItems={cartItems} setPage={setPage} />;
       case "contact":

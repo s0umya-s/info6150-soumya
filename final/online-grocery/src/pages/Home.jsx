@@ -10,12 +10,10 @@ function Home({ setPage }) {
         Skip the Aisles. Ditch the Fees.
       </h1>
       <p>
-        Pre-save your grocery list from home and pick up fully packed bags at the curb—
-        no hassle, no delivery charges.
+      Order groceries from home and pick them up packed and ready—no hassle, no fees.
       </p>
       <p>
-        <span>Curbside Mart</span> saves you time,
-        money, and stress. It’s grocery shopping, reimagined.
+      Curbside Mart saves you time and stress.
       </p>
       <p>
        Ready when you are. Fresh every time.

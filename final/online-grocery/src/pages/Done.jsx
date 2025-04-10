@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/done.css";
+import Button from "../components/Button";
 
 function Done({ setPage }) {
   return (
@@ -14,10 +15,16 @@ function Done({ setPage }) {
         <div className="step active">4. Done</div>
       </div>
 
+      <img 
+        src="/assets/order-confirmed.jpeg" 
+        alt="Order confirmed illustration" 
+        className="done-image" 
+      />
+
       <h2>Thank You!</h2>
       <p>Your order has been placed successfully.</p>
       <p>Please check your email for confirmation and next steps.</p>
-      <button onClick={() => setPage("home")}>Back to Home</button>
+      <Button onClick={() => setPage("home")}>Back to Home</Button>
     </section>
   );
 }

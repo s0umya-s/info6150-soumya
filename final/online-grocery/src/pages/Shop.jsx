@@ -61,8 +61,8 @@ function Shop({ cartItems, setCartItems, setPage }) {
       </div>
 
       <div className="step-header">
-  <Button type="button" onClick={() => setPage("home")}>←</Button>
-  <div className="step-header__text">
+        <Button type="button" onClick={() => setPage("home")}>←</Button>
+      <div className="step-header__text">
     <h2>Select items</h2>
     <h4>These items will be picked and packed for you, ready to be picked up at our curb</h4>
     </div>
@@ -92,7 +92,7 @@ function Shop({ cartItems, setCartItems, setPage }) {
         })}
       </div>
 
-      <div className="hero__button">
+      <div className="cart-total">
         <h3>Total: ${total.toFixed(2)}</h3>
         <Button onClick={() => setPage("cart")}>
           Preview Cart
