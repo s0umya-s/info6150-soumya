@@ -52,4 +52,8 @@ Image: pick-up.jpg
 Source: https://unsplash.com/photos/black-car-on-pedestrian-lane-during-daytime-Hwkl6xh-6Ag
 
 Image: logo.jpg
-Source: created
+Source: self created
+
+Image: order-confirmed.jpeg
+Source: https://stock.adobe.com/search?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aillustration%5D=1&filters%5Bcontent_type%3Azip_vector%5D=1&filters%5Bcontent_type%3Avideo%5D=1&filters%5Bcontent_type%3Atemplate%5D=1&filters%5Bcontent_type%3A3d%5D=1&filters%5Bcontent_type%3Aaudio%5D=0&filters%5Bfetch_excluded_assets%5D=1&filters%5Binclude_stock_enterprise%5D=1&filters%5Bis_editorial%5D=0&filters%5Bfree_collection%5D=0&filters%5Bcontent_type%3Aimage%5D=1&k=curbside+grocery+pickup&order=relevance&limit=100&search_page=1&search_type=usertyped&acp=&aco=curbside+grocery+pickup&get_facets=0&asset_id=473183125
+Licensed through Adobe Stock using student account
