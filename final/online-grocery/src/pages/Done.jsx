@@ -24,6 +24,7 @@ function Done({ setPage }) {
       <h2>Thank You!</h2>
       <p>Your order has been placed successfully.</p>
       <p>Please check your email for confirmation and next steps.</p>
+      <p>Payment can be made upon pickup</p>
       <Button onClick={() => setPage("home")}>Back to Home</Button>
     </section>
   );

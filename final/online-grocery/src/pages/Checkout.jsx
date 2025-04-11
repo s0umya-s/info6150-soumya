@@ -1,39 +1,26 @@
 import React, { useState } from "react";
 import "../styles/form.css";
 import "../styles/toastmodal.css";
-import "../styles/progressbar.css"
+import "../styles/progressbar.css";
 import Button from "../components/Button";
 
 function Checkout({ cartItems, setPage }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    shipping: "",
-    billing: "",
+    pickupHour: "",
+    pickupPeriod: "",
     deliveryType: "curbside",
-    billingSame: true,
   });
 
   const [errors, setErrors] = useState({});
-
   const [showToast, setShowToast] = useState(false);
+
   const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    setFormData((prev) => {
-      const updated = {
-        ...prev,
-        [name]: type === "checkbox" ? checked : value,
-      };
-
-      if (name === "billingSame" && checked) {
-        updated.billing = prev.shipping;
-      }
-
-      return updated;
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -43,8 +30,17 @@ function Checkout({ cartItems, setPage }) {
     if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.email.trim()) newErrors.email = "Email is required.";
     else if (!formData.email.includes("@")) newErrors.email = "Enter a valid email.";
-    if (!formData.shipping.trim()) newErrors.shipping = "Shipping address is required.";
-    if (!formData.billingSame && !formData.billing.trim()) newErrors.billing = "Billing address is required.";
+
+    if (!formData.pickupHour.trim()) {
+      newErrors.pickupHour = "Pickup hour is required.";
+    } else {
+      const hour = Number(formData.pickupHour);
+      if (isNaN(hour) || hour < 1 || hour > 12) {
+        newErrors.pickupHour = "Hour must be a number between 1 and 12.";
+      }
+    }
+
+    if (!formData.pickupPeriod.trim()) newErrors.pickupPeriod = "Please select AM or PM.";
 
     setErrors(newErrors);
 
@@ -71,114 +67,107 @@ function Checkout({ cartItems, setPage }) {
 
       <div className="step-header">
         <Button type="button" onClick={() => setPage("home")}>←</Button>
-      <div className="step-header__text"></div>
-      <h2>Checkout</h2>
+        <div className="step-header__text">
+          <h2>Checkout</h2>
+        </div>
       </div>
 
       {cartItems.length === 0 ? (
         <p>Your cart is empty. <button onClick={() => setPage("shop")}>Go to Shop</button></p>
       ) : (
-        <>
-          <form className="checkout-form" onSubmit={handleSubmit} noValidate>
-            <div className="form-group">
-              <label htmlFor="name">Name*</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={formData.name}
-                onChange={handleChange}
-                className={errors.name ? "invalid" : ""}
-                aria-describedby={errors.name ? "name-error" : undefined}
-              />
-              {errors.name && <div className="error" id="name-error">{errors.name}</div>}
-            </div>
+        <form className="checkout-form" onSubmit={handleSubmit} noValidate>
+          <div className="form-group">
+            <label htmlFor="name">Name*</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              className={errors.name ? "invalid" : ""}
+              aria-describedby={errors.name ? "name-error" : undefined}
+            />
+            {errors.name && <div className="error" id="name-error">{errors.name}</div>}
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="email">Email*</label>
-              <input
-                id="email"
-                name="email"
-                type="text"
-                value={formData.email}
-                onChange={handleChange}
-                className={errors.email ? "invalid" : ""}
-                aria-describedby={errors.email ? "email-error" : undefined}
-              />
-              {errors.email && <div className="error" id="email-error">{errors.email}</div>}
-            </div>
+          <div className="form-group">
+            <label htmlFor="email">Email*</label>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              value={formData.email}
+              onChange={handleChange}
+              className={errors.email ? "invalid" : ""}
+              aria-describedby={errors.email ? "email-error" : undefined}
+            />
+            {errors.email && <div className="error" id="email-error">{errors.email}</div>}
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="shipping">Shipping Address*</label>
-              <input
-                id="shipping"
-                name="shipping"
-                type="text"
-                value={formData.shipping}
-                onChange={handleChange}
-                className={errors.shipping ? "invalid" : ""}
-                aria-describedby={errors.shipping ? "shipping-error" : undefined}
-              />
-              {errors.shipping && <div className="error" id="shipping-error">{errors.shipping}</div>}
-            </div>
+          <div className="form-group">
+            <label htmlFor="pickupHour">Estimated Pickup Hour (1–12)*</label>
+            <input
+              id="pickupHour"
+              name="pickupHour"
+              type="number"
+              min="1"
+              max="12"
+              placeholder="Enter hour (e.g., 4)"
+              value={formData.pickupHour}
+              onChange={handleChange}
+              className={errors.pickupHour ? "invalid" : ""}
+              aria-describedby={errors.pickupHour ? "pickupHour-error" : undefined}
+            />
+            {errors.pickupHour && <div className="error" id="pickupHour-error">{errors.pickupHour}</div>}
+          </div>
 
-            <fieldset>
-              <legend>Delivery Option*</legend>
-              <label>
-                <input
-                  type="radio"
-                  name="deliveryType"
-                  value="curbside"
-                  checked={formData.deliveryType === "curbside"}
-                  onChange={handleChange}
-                />
-                Curbside Pickup
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="deliveryType"
-                  value="home"
-                  checked={formData.deliveryType === "home"}
-                  onChange={handleChange}
-                  disabled
-                />
-                Home Delivery (Not available)
-              </label>
-            </fieldset>
+          <div className="form-group">
+            <label htmlFor="pickupPeriod">AM/PM*</label>
+            <select
+              id="pickupPeriod"
+              name="pickupPeriod"
+              value={formData.pickupPeriod}
+              onChange={handleChange}
+              className={errors.pickupPeriod ? "invalid" : ""}
+              aria-describedby={errors.pickupPeriod ? "pickupPeriod-error" : undefined}
+            >
+              <option value="">Select</option>
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+            {errors.pickupPeriod && <div className="error" id="pickupPeriod-error">{errors.pickupPeriod}</div>}
+          </div>
 
+          <fieldset>
+            <legend>Delivery Option*</legend>
             <label>
               <input
-                type="checkbox"
-                name="billingSame"
-                checked={formData.billingSame}
+                type="radio"
+                name="deliveryType"
+                value="curbside"
+                checked={formData.deliveryType === "curbside"}
                 onChange={handleChange}
               />
-              Billing address same as shipping
+              Curbside Pickup
             </label>
+            <label>
+              <input
+                type="radio"
+                name="deliveryType"
+                value="home"
+                checked={formData.deliveryType === "home"}
+                onChange={handleChange}
+                disabled
+              />
+              Home Delivery (Not available)
+            </label>
+          </fieldset>
 
-            {!formData.billingSame && (
-              <div className="form-group">
-                <label htmlFor="billing">Billing Address*</label>
-                <input
-                  id="billing"
-                  name="billing"
-                  type="text"
-                  value={formData.billing}
-                  onChange={handleChange}
-                  className={errors.billing ? "invalid" : ""}
-                  aria-describedby={errors.billing ? "billing-error" : undefined}
-                />
-                {errors.billing && <div className="error" id="billing-error">{errors.billing}</div>}
-              </div>
-            )}
-
-            <div className="cart-total">
-              <h3>Total: ${total.toFixed(2)}</h3>
-              <Button onClick={() => setPage("done")}>Place your order</Button>
-            </div>
-          </form>
-        </>
+          <div className="cart-total">
+            <h3>Total: ${total.toFixed(2)}</h3>
+            <Button type="submit">Place your order</Button>
+          </div>
+        </form>
       )}
     </section>
   );
