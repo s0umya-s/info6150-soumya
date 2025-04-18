@@ -6,7 +6,8 @@ import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Contact from "./pages/Contact";
-import Done from "./pages/Done"; // ✅ Don't forget this import
+import Done from "./pages/Done";
+
 import "./styles/responsive.css";
 import "./styles/layout.css";
 
@@ -18,15 +19,38 @@ function App() {
   const renderPage = () => {
     switch (page) {
       case "shop":
-        return <Shop setPage={setPage} cartItems={cartItems} setCartItems={setCartItems} />;
+        return (
+          <Shop
+            setPage={setPage}
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+          />
+        );
       case "cart":
-        return <Cart cartItems={cartItems} setCartItems={setCartItems} setPage={setPage} />
+        return (
+          <Cart
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+            setPage={setPage}
+          />
+        );
       case "checkout":
-        return <Checkout cartItems={cartItems} setPage={setPage} />;
+        return (
+          <Checkout
+            cartItems={cartItems}
+            setPage={setPage}
+          />
+        );
       case "contact":
-        return <Contact displayName={displayName} setDisplayName={setDisplayName} />;
+        return (
+          <Contact
+            setPage={setPage}
+            displayName={displayName}
+            setDisplayName={setDisplayName}
+          />
+        );
       case "done":
-        return <Done setPage={setPage} />; // ✅ Fixed line
+        return <Done setPage={setPage} />;
       default:
         return <Home setPage={setPage} />;
     }

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/form.css";
 import "../styles/toastmodal.css";
 import ButtonAdd from "../components/ButtonAdd";
 import ToastModal from "../components/ToastModal";
 
-function Contact({ setPage }) {
+function Contact({ setPage, displayName, setDisplayName }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,6 +13,8 @@ function Contact({ setPage }) {
 
   const [errors, setErrors] = useState({});
   const [showToast, setShowToast] = useState(false);
+  const [tempName, setTempName] = useState(displayName);
+  const dialogRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +35,18 @@ function Contact({ setPage }) {
     if (Object.keys(newErrors).length === 0) {
       setShowToast(true);
       setFormData({ name: "", email: "", message: "" });
+    }
+  };
+
+  const openModal = () => {
+    setTempName(displayName);
+    dialogRef.current.showModal();
+  };
+
+  const saveName = () => {
+    if (tempName.trim()) {
+      setDisplayName(tempName.trim());
+      dialogRef.current.close();
     }
   };
 
@@ -82,14 +96,33 @@ function Contact({ setPage }) {
 
         <div className="checkout-buttons">
           <ButtonAdd type="submit">Send Message</ButtonAdd>
+          <ButtonAdd type="button" onClick={openModal} className="btn-regular">
+            Edit Display Name
+          </ButtonAdd>
         </div>
       </form>
 
       <ToastModal
         show={showToast}
-        message="Your message has been sent! We'll be in touch shortly."
+        message={`Hello ${displayName}, your message has been sent! We'll be in touch shortly.`}
         onClose={() => setShowToast(false)}
       />
+
+      <dialog ref={dialogRef}>
+        <form method="dialog" className="checkout-form">
+          <label htmlFor="displayName">New Display Name</label>
+          <input
+            id="displayName"
+            type="text"
+            value={tempName}
+            onChange={(e) => setTempName(e.target.value)}
+          />
+          <div className="checkout-buttons">
+            <ButtonAdd type="button" onClick={saveName}>Save</ButtonAdd>
+            <ButtonAdd type="button" onClick={() => dialogRef.current.close()}>Cancel</ButtonAdd>
+          </div>
+        </form>
+      </dialog>
     </section>
   );
 }

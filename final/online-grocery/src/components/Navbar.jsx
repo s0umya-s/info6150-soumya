@@ -6,20 +6,32 @@ function Navbar({ setPage, displayName }) {
 
   const handleNavClick = (page) => {
     setPage(page);
-    setIsOpen(false); // Close menu on navigation
+    setIsOpen(false);
   };
 
   return (
     <header className="navbar">
-      <div className="navbar__brand" onClick={() => setPage("home")} tabIndex={0}>
-        <img src="/assets/logo.jpg" alt="Curbside Mart logo" className="navbar__logo" />
+      <div
+        className="navbar__brand"
+        onClick={() => handleNavClick("home")}
+        tabIndex={0}
+        role="button"
+        aria-label="Go to Home"
+        onKeyDown={(e) => e.key === "Enter" && handleNavClick("home")}
+      >
+        <img
+          src="/assets/logo.jpg"
+          alt="Curbside Mart logo"
+          className="navbar__logo"
+        />
         Curbside Mart
       </div>
 
       <button
         className="navbar__hamburger"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu"
+        aria-label="Toggle navigation menu"
+        aria-expanded={isOpen}
       >
         ☰
       </button>

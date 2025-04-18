@@ -73,7 +73,7 @@ function Checkout({ cartItems, setPage }) {
       </div>
 
       {cartItems.length === 0 ? (
-        <p>Your cart is empty. <button onClick={() => setPage("shop")}>Go to Shop</button></p>
+        <p>Your cart is empty. <Button onClick={() => setPage("shop")}>Go to Shop</Button></p>
       ) : (
         <form className="checkout-form" onSubmit={handleSubmit} noValidate>
           <div className="form-group">
