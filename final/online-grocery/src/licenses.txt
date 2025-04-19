@@ -1,0 +1,59 @@
+License: Unsplash (https://unsplash.com/license)
+
+Image: strawberries.jpg
+Source: https://unsplash.com/photos/strawberry-lot-FCrgmqqvl-w
+
+Image: milk.jpg
+Source: https://unsplash.com/photos/itambe-natural-milk-carton-dxb_HSjoQ40
+
+Image: eggs.jpg
+Source: https://unsplash.com/photos/itambe-natural-milk-carton-dxb_HSjoQ40
+
+Image: bread.jpg
+Source: https://unsplash.com/photos/brown-bread-on-brown-wooden-tray-w2ZFjDnUL3w
+
+Image: spinach.jpg
+Source: https://unsplash.com/photos/green-leaves-on-brown-wooden-table-3YTtK5LRtDI
+
+Image: bananas.jpg
+Source: https://unsplash.com/photos/yellow-bananas-fczCr7MdE7U
+
+Image: carrots.jpg
+Source: https://unsplash.com/photos/a-bunch-of-carrots-sitting-on-top-of-a-cutting-board-q-kv8ncU2yQ
+
+Image: cheese.jpg
+Source: https://unsplash.com/photos/sliced-cheese-on-black-plate-beside-wine-glass-jeAjT87nbjM
+
+Image: almonds.jpg
+Source: https://unsplash.com/photos/brown-almond-nuts-on-white-ceramic-bowl-8LvXmMZuAU0
+
+Image: yogurt.jpg
+Source: https://unsplash.com/photos/simply-nature-organic-coconut-oil-v1Afu8vbEU8
+
+Image: apples.jpg
+Source: https://unsplash.com/photos/red-and-yellow-apples-on-yellow-plastic-container-jNi2SefV6bc
+
+Image: tomatoes.jpg
+Source: https://unsplash.com/photos/red-tomatoes-on-brown-wooden-table-eb26eV-ys_k
+
+Image: trailmix.jpg
+Source: https://unsplash.com/photos/cooked-beans-pUa1On18Jno
+
+Image: orangejuice.jpg
+Source: https://unsplash.com/photos/orange-juice-in-clear-drinking-glass-kkrXVKK-jhg
+
+Image: chips.jpg
+Source: https://unsplash.com/photos/blue-ceramic-mug-on-green-table-cloth--j2i9iMmznc
+
+Image: grab-bag.jpg
+Source: https://unsplash.com/photos/a-man-holding-a-paper-bag-in-front-of-a-bunch-of-bananas-wM50YUQ3Dyc
+
+Image: pick-up.jpg
+Source: https://unsplash.com/photos/black-car-on-pedestrian-lane-during-daytime-Hwkl6xh-6Ag
+
+Image: logo.jpg
+Source: self created
+
+Image: order-confirmed.jpeg
+Source: https://stock.adobe.com/search?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aillustration%5D=1&filters%5Bcontent_type%3Azip_vector%5D=1&filters%5Bcontent_type%3Avideo%5D=1&filters%5Bcontent_type%3Atemplate%5D=1&filters%5Bcontent_type%3A3d%5D=1&filters%5Bcontent_type%3Aaudio%5D=0&filters%5Bfetch_excluded_assets%5D=1&filters%5Binclude_stock_enterprise%5D=1&filters%5Bis_editorial%5D=0&filters%5Bfree_collection%5D=0&filters%5Bcontent_type%3Aimage%5D=1&k=curbside+grocery+pickup&order=relevance&limit=100&search_page=1&search_type=usertyped&acp=&aco=curbside+grocery+pickup&get_facets=0&asset_id=473183125
+Licensed through Adobe Stock using student account

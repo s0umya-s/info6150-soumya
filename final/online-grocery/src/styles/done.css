@@ -1,0 +1,34 @@
+.done-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .done-container h2 {
+    color: green;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .done-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .done-container button {
+    padding: 0.6rem 1.5rem;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .done-image {
+    max-width: 300px;
+    width: 100%;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 5px;
+  }

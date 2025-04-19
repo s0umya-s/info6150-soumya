@@ -1,0 +1,62 @@
+.hero {
+  background-color: #eedaca;
+  background-image: url("/assets/grab-bag.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.hero__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero__image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.hero__content {
+  background-color: rgba(237, 161, 102, 0.80);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 450px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  text-align: right;
+}
+
+.hero__content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #762900;
+}
+
+.hero__content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.hero__content span {
+  font-weight: bold;
+  color: sienna;
+}
+
+.hero__button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,105 @@
+.checkout-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #dbe9d2; /* light green background */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  color: sienna;
+  font-size: 1rem;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form select {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid sienna;
+  background-color: white;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.checkout-form input[type="text"]:focus,
+.checkout-form input[type="email"]:focus,
+.checkout-form select:focus {
+  border-color: #2c5c2c; /* green */
+  box-shadow: 0 0 0 3px rgba(44, 92, 44, 0.2);
+  outline: none;
+}
+
+.checkout-form select.invalid,
+.checkout-form input.invalid {
+  border-color: red;
+}
+
+.checkout-form option {
+  color: #333;
+}
+
+.checkout-form fieldset {
+  border: 2px solid sienna;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+legend {
+  font-weight: bold;
+  color: sienna;
+  padding: 0 0.5rem;
+}
+
+label {
+  margin-bottom: 0.4rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.checkout-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.checkout-buttons button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #2c5c2c; /* green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-buttons button:hover {
+  background-color: sienna;
+  color: white;
+}
+
+.btn-regular {
+  padding: 0.5rem 1rem;
+  background-color: sienna;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-regular:hover {
+  background-color: #a74c2c;
+}

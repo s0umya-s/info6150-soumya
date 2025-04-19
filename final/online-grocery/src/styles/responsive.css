@@ -1,0 +1,22 @@
+@media screen and (max-width: 768px) {
+    .navbar__nav button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+  
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .checkout-form {
+      padding: 1rem;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }

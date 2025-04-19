@@ -1,0 +1,143 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f3c687;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  background-color: #fdfaf6;
+}
+
+
+.skiplink {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skiplink:focus {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background-color: #2c5c2c;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+
+.btn-regular,
+.btn-add {
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  background-color: #2c5c2c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: max-content;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-regular:hover,
+.btn-add:hover {
+  background-color: #a0522d;
+  color: white;
+}
+
+.btn-add {
+  margin: 1.25rem auto;
+  display: block;
+}
+
+
+.step-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: sienna;
+}
+
+.step-header h4 {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: small;
+  color: rgb(206, 150, 124);
+}
+
+.step-header button {
+  margin-top: 0.3rem;
+  background-color: #a0522d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+
+.filter-sort {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #ecd9bf;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.filter-sort label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-sort select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #333;
+  outline-color: #2c5c2c;
+  transition: border-color 0.3s;
+}
+
+.filter-sort select:focus {
+  border-color: #2c5c2c;
+}
